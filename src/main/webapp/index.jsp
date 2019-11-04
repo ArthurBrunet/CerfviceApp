@@ -1,5 +1,3 @@
-<html>
-<body>
-<h2>coucou :)</h2>
-</body>
-</html>
+<%@ include file="vues/header.jsp"%>
+<%@ include file="vues/dashboard.jsp"%>
+<%@ include file="vues/footer.jsp"%>
