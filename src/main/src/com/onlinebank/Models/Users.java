@@ -5,6 +5,7 @@ public class Users extends BaseModelORM{
     private Integer id;
 
     String tableName = "Users";
+
     private String name;
     private String firstName;
     private String email;
