@@ -1,14 +1,11 @@
 package com.onlinebank.Models;
 
-//Importation des paquest de javasql
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 //Définissions de notre classe
 public class BaseModelORM {
@@ -19,7 +16,7 @@ public class BaseModelORM {
     private String tableName = "";
     private String insertQueryString = "INSERT INTO ";
     private String updateQueryString = "UPDATE ";
-    private String selectQueryString = "SELECT id, ";
+    private String selectQueryString = "SELECT ";
     private String removeQueryString = "DELETE FROM ";
     private String updateIdQueryString = "UPDATE ";
 
@@ -230,42 +227,79 @@ public class BaseModelORM {
         return statement;
     }
 
-    private String getSelectQueryString(){
+    private String getSelectQueryString(ArrayList<String> fields){
 
-        ArrayList<String> fields = new ArrayList<String>();
-        StringBuilder total      = new StringBuilder();
+        StringBuilder total = new StringBuilder();
 
         total.append(this.selectQueryString);
-
-        for (Field f : getClass().getDeclaredFields())
-        {
-            try {
-                if (f.getName().compareTo("id") != 0 && f.getName().compareTo("tableNme") != 0 && f.getName() != "tableName"){
-
-                    fields.add(f.getName());  //On étbalit les valeurs des chmaps comme des strings
-
-                }
-            }
-            catch (Exception e){
-                System.out.println(e);
-            }
-        }
 
         total.append(String.join(",", fields));
         total.append(" FROM ");
         total.append(this.getTableName());
 
 
-        System.out.println(total.toString());
         return total.toString();
 
     }
 
-    public PreparedStatement getSelectQuery(Connection dbConnection){
+    public PreparedStatement getSelectQuery(Connection dbConnection, ArrayList<String> fields){
 
-        String selectQueryString = this.getSelectQueryString();
+        String selectQueryString = this.getSelectQueryString(fields);
         PreparedStatement statement = null;
 
+
+        try{
+            statement = dbConnection.prepareStatement(selectQueryString, Statement.RETURN_GENERATED_KEYS);
+
+            for (Field f : getClass().getDeclaredFields())
+            {
+                try
+                {
+                    if (f.getName().compareTo("id") != 0)
+                    {
+
+                        String fieldName = ucFirst(f.getName());
+                        String targetMethod = "get" + fieldName; // On établit la méthode de la requete et du coup get avec les champs retournés
+
+                        Method classMethod = getClass().getMethod(targetMethod);
+
+                        classMethod.invoke(this);
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.out.println(e);
+                }
+            }
+        }
+        catch (SQLException e){
+
+            System.out.println(e);
+
+        }
+
+        return statement;
+    }
+
+    public PreparedStatement getSelectQuery(Connection dbConnection, ArrayList<String> fields, ArrayList filters){
+
+        String selectQueryString = this.getSelectQueryString(fields);
+        PreparedStatement statement = null;
+
+        selectQueryString = selectQueryString + " WHERE ";
+
+        List<String> _parsedFilters = new ArrayList<String>();
+
+        for (Integer counter =0; counter < filters.size(); counter++){
+            HashMap _filters = (HashMap) filters.get(counter);
+            String _parsedTest = (String) _filters.get("col") + " " + _filters.get("operator") + " " + _filters.get("value");
+            _parsedFilters.add(_parsedTest);
+        }
+
+        selectQueryString = selectQueryString + String.join(" AND ", _parsedFilters);
+
+        System.out.println(selectQueryString);
 
         try{
             statement = dbConnection.prepareStatement(selectQueryString, Statement.RETURN_GENERATED_KEYS);
@@ -425,124 +459,6 @@ public class BaseModelORM {
         return statement;
     }
 
-    private String getSelectIdQueryString(String emaill){
-        ArrayList<String> fields = new ArrayList<String>();
-        StringBuilder total      = new StringBuilder();
-        String where             = " WHERE email = " + "'" + emaill + "'";
-
-
-        total.append(this.selectQueryString);
-
-        for (Field f : getClass().getDeclaredFields())
-        {
-            try {
-                if (f.getName().compareTo("id") != 0 && f.getName().compareTo("tableNme") != 0 && f.getName() != "tableName"){
-
-                    fields.add(f.getName());  //On étbalit les valeurs des chmaps comme des strings
-
-                }
-            }
-            catch (Exception e){
-                System.out.println(e);
-            }
-        }
-
-        total.append(String.join(",", fields));
-        total.append(" FROM ");
-        total.append(this.getTableName());
-        total.append(where);
-
-
-        System.out.println(total.toString());
-        return total.toString();
-
-    }
-
-
-    public PreparedStatement getSelectIdQuery(Connection dbConnection, String emaill){
-        String selectIdQueryString = this.getSelectIdQueryString(emaill);
-        PreparedStatement statement = null;
-
-        Integer i = 1;
-
-        try{
-            statement = dbConnection.prepareStatement(selectIdQueryString, Statement.RETURN_GENERATED_KEYS);
-
-            for (Field f : getClass().getDeclaredFields())
-            {
-                try
-                {
-                    if (f.getName().compareTo("id") != 0)
-                    {
-
-                        String fieldName = ucFirst(f.getName());
-                        String targetMethod = "get" + fieldName; // On établit la méthode de la requete et du coup get avec les champs retournés
-
-                        Method classMethod = getClass().getMethod(targetMethod);
-
-                        classMethod.invoke(this);
-
-                    }
-                    else
-                    {
-                        i = addParameter(statement, i, f);
-                    }
-                }
-                catch (Exception e)
-                {
-                    System.out.println(e);
-                }
-            }
-        }
-        catch (SQLException e){
-
-            System.out.println(e);
-
-        }
-
-        return statement;
-    }
-
-//    public PreparedStatement getSelectIdQuery(Connection dbConnection){
-//        String selectIdQueryString = this.getSelectIdQueryString(id);
-//        PreparedStatement statement = null;
-//
-//
-//        try{
-//            statement = dbConnection.prepareStatement(selectIdQueryString, Statement.RETURN_GENERATED_KEYS);
-//
-//            for (Field f : getClass().getDeclaredFields())
-//            {
-//                try
-//                {
-//                    if (f.getName().compareTo("id") != 0)
-//                    {
-//
-//                        String fieldName = ucFirst(f.getName());
-//                        String targetMethod = "get" + fieldName; // On établit la méthode de la requete et du coup get avec les champs retournés
-//
-//                        Method classMethod = getClass().getMethod(targetMethod);
-//
-//                        classMethod.invoke(this);
-//
-//                    }
-//                }
-//                catch (Exception e)
-//                {
-//                    System.out.println(e);
-//                }
-//            }
-//        }
-//        catch (SQLException e){
-//
-//            System.out.println(e);
-//
-//        }
-//
-//        return statement;
-//    }
-
-
     private Integer addParameter(PreparedStatement statement, Integer i, Field field)
     {
         try
@@ -575,5 +491,40 @@ public class BaseModelORM {
         return i;
     }
 
+
+    public BaseModelORM populate(ResultSet rs, ArrayList<String> fields)
+    {
+        for (Field f : getClass().getDeclaredFields())
+        {
+            try {
+                if (f.getName().compareTo("tableNme") != 0 && f.getName() != "tableName")
+                {
+                    if ( rs.getString(f.getName()) == null )
+                    {
+                        continue;
+                    }
+
+                    String fieldName    = ucFirst(f.getName()); // "name"
+                    String targetMethod = "set" + fieldName; // "getName"
+
+                    Method classMethod  = getClass().getMethod(targetMethod, f.getType() );
+
+                    if ( f.getType() == Integer.class )
+                    {
+                        classMethod.invoke(this, rs.getInt(f.getName()));
+                    }
+
+                    if ( f.getType() == String.class )
+                    {
+                        classMethod.invoke(this, rs.getString(f.getName()));
+                    }
+                }
+            }
+            catch (Exception e){
+                System.out.println(e);
+            }
+        }
+        return this;
+    }
 
 }
