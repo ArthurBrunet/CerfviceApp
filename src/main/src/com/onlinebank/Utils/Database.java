@@ -1,7 +1,6 @@
 package com.onlinebank.Utils;
 
 import com.onlinebank.Models.BaseModelORM;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
