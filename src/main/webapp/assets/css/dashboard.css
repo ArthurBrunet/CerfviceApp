@@ -1,25 +1,32 @@
-.menu-cote{
-    text-align: center;
-    margin: -1em;
-}
-.menu-cote:hover{
-    color: #b8860b;
-}
-a .menu-cote{
-    color: #cc9900;
-}
 img{
-    margin-left: 30px;
-    width: 60px;
-    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 70px;
+}
+.navbar-brand{
+    text-align: center ;
 }
 .row{
-    margin-top: 70px;
+    margin-top: 5em;
 }
 h2, tr, th{
     text-align: center ;
     font-size: 0,65em;
 }
-.form-control{
-    width: 60%;
+.nav-link, .ensavoirplus{
+    text-align: center;
+    color: #d9b01c!important;
+}
+.nav-link:hover, .page-link:hover, .ensavoirplus:hover{
+    color: #b8860b;
+    text-decoration: none;
+}
+.page-link{
+    color: #d9b01c;
+}
+.navbar-nav{
+    padding-right: -3em;
+}
+btn{
+    width: 50%;
 }
