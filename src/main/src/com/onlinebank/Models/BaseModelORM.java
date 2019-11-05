@@ -335,6 +335,68 @@ public class BaseModelORM {
         return statement;
     }
 
+
+
+
+
+    public PreparedStatement getSelectQuery(Connection dbConnection, ArrayList<String> fields, ArrayList filters, String join){
+
+        String selectQueryString = this.getSelectQueryString(fields);
+        PreparedStatement statement = null;
+
+
+        selectQueryString = selectQueryString + " LEFT JOIN " + join + " ON ";
+
+        List<String> _parsedFilters = new ArrayList<String>();
+
+        for (Integer counter =0; counter < filters.size(); counter++){
+            HashMap _filters = (HashMap) filters.get(counter);
+            String _parsedTest = (String) _filters.get("col") + " " + _filters.get("operator") + " " + _filters.get("value");
+            _parsedFilters.add(_parsedTest);
+        }
+
+        selectQueryString = selectQueryString + String.join(" AND ", _parsedFilters);
+
+        System.out.println(selectQueryString);
+
+        try{
+            statement = dbConnection.prepareStatement(selectQueryString, Statement.RETURN_GENERATED_KEYS);
+
+            for (Field f : getClass().getDeclaredFields())
+            {
+                try
+                {
+                    if (f.getName().compareTo("id") != 0)
+                    {
+
+                        String fieldName = ucFirst(f.getName());
+                        String targetMethod = "get" + fieldName; // On établit la méthode de la requete et du coup get avec les champs retournés
+
+                        Method classMethod = getClass().getMethod(targetMethod);
+
+                        classMethod.invoke(this);
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.out.println(e);
+                }
+            }
+        }
+        catch (SQLException e){
+
+            System.out.println(e);
+
+        }
+
+        return statement;
+    }
+
+
+
+
+
     public String getRemoveQueryString(Integer id){
 
         ArrayList<String> fields = new ArrayList<String>();
