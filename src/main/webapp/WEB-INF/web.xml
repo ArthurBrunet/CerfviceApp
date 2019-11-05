@@ -5,12 +5,34 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+<!--definition des servelets-->
+  <servlet>
+    <servlet-name>home</servlet-name>
+    <jsp-file>/vues/accueil.jsp</jsp-file>
+  </servlet>
   <servlet>
     <servlet-name>ServletRegister</servlet-name>
+    <jsp-file>/vues/register.jsp</jsp-file>
     <servlet-class>com.onlinebank.Servlet.ServletRegister</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ServletLogin</servlet-name>
+    <jsp-file>/vues/login.jsp</jsp-file>
+    <servlet-class>com.onlinebank.Servlet.ServletLogin</servlet-class>
+  </servlet>
+
+<!--mapping-->
+  <servlet-mapping>
+    <servlet-name>home</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ServletRegister</servlet-name>
-    <url-pattern>/toto</url-pattern>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/login</url-pattern>
   </servlet-mapping>
 </web-app>
