@@ -18,7 +18,7 @@ public class Database {
             try
             {
                 Class.forName("org.postgresql.Driver");
-                db = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test", "postgres", "postgres");
+                db = DriverManager.getConnection("jdbc:postgresql://localhost:5432/onlinebank", "postgres", "postgres");
             }
             catch(Exception e)
             {
