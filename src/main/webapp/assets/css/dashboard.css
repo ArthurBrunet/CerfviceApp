@@ -5,6 +5,11 @@ img{
 }
 .navbar-brand{
     text-align: center ;
+    vertical-align: middle;
+}
+.rechercher{
+    text-align: center ;
+    vertical-align: middle;
 }
 .row{
     margin-top: 5em;
@@ -24,9 +29,39 @@ h2, tr, th{
 .page-link{
     color: #d9b01c;
 }
+.page-link:hover{
+    background-color: #333333!important;
+    color: #b8860b;
+}
 .navbar-nav{
     padding-right: -3em;
 }
-btn{
-    width: 50%;
+.btn{
+    height: 40%;
+    border: 1px solid #b8860b;!important;
+}
+.btn-secondary{
+    color: #d9b01c!important;
+    text-decoration: none;
+    background-color: transparent;
+}
+.btn-secondary:hover{
+    background-color: #333333!important;
+    color: #b8860b!important;
+}
+.bg-dark{
+    background-color: #333333!important;
+}
+.swal2-actions{
+    margin: 1em auto 0;
+}
+.btn-success, .btn-danger{
+    margin: 2px!important;
+    height: 40px;
+}
+.swal2-icon{
+    margin: 2px!important;
+}
+.swal2-progress-steps{
+    max-width: 500px;
 }
