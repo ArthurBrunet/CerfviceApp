@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import com.onlinebank.Utils.Verification;
+import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet(name = "ServletRegister")
 public class ServletRegister extends HttpServlet {
@@ -98,10 +99,13 @@ public class ServletRegister extends HttpServlet {
 
             /*Envois en BDD*/
             Database.insert(test);
-//
+
+            String pw_hash = BCrypt.hashpw(password,BCrypt.gensalt());
 //            /*Création d'un compte*/
             testCompte
-                    .setEmail(email);
+                    .setEmail(email)
+                    .setMotdepasse(pw_hash)
+                    .setToken()
         }
 
         request.getRequestDispatcher(VUE).forward(request,response);
@@ -110,6 +114,28 @@ public class ServletRegister extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher(VUE).forward(request,response);
     }
+
+    protected String generateRandomString(){
+        int $length = 255;
+        String $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int $charactersLength = $characters.length();
+        String $randomString = "";
+        int $i;
+        for ($i = 0; $i < $length; $i++) {
+            
+        }
+        return $randomString;
+    }
+
+//    function generateRandomString($length = 10) {
+//        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//        $charactersLength = strlen($characters);
+//        $randomString = '';
+//        for ($i = 0; $i < $length; $i++) {
+//            $randomString .= $characters[rand(0, $charactersLength - 1)];
+//        }
+//        return $randomString;
+//    }
 
 //    /**
 //     * Valide l'adresse mail saisie.
