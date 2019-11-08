@@ -9,16 +9,13 @@
 <!--definition des servelets-->
   <servlet>
     <servlet-name>home</servlet-name>
-    <jsp-file>/vues/accueil.jsp</jsp-file>
   </servlet>
   <servlet>
     <servlet-name>ServletRegister</servlet-name>
-    <jsp-file>/vues/register.jsp</jsp-file>
     <servlet-class>com.onlinebank.Servlet.ServletRegister</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>ServletLogin</servlet-name>
-    <jsp-file>/vues/login.jsp</jsp-file>
     <servlet-class>com.onlinebank.Servlet.ServletLogin</servlet-class>
   </servlet>
 

@@ -1,6 +1,5 @@
 package com.onlinebank.Utils;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Filter {
