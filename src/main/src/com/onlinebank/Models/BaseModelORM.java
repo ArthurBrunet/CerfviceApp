@@ -47,7 +47,7 @@ public class BaseModelORM {
         return "";
     }
 
-    //Ici nous définissons la reqête verbale pour l'insertion
+    //Ici nous définissons la requête verbale pour l'insertion
     private String getInsertString()
     {
 
@@ -540,6 +540,14 @@ public class BaseModelORM {
                 if( field.getType() == String.class )
                 {
                     statement.setString (i,  (String) classMethod.invoke(this) );
+                }
+                if( field.getType() == Boolean.class )
+                {
+                    statement.setBoolean (i,  (Boolean) classMethod.invoke(this) );
+                }
+                if( field.getType() == Timestamp.class )
+                {
+                    statement.setTimestamp (i,  (Timestamp) classMethod.invoke(this) );
                 }
 
                 i = i + 1;

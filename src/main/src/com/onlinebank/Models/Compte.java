@@ -1,18 +1,53 @@
 package com.onlinebank.Models;
 
-public class Compte extends BaseModelORM{
-    private Integer id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+public class Compte extends BaseModelORM{
     String tableName = "ob_compte";
 
+    @NotBlank
+    @NotNull
+    private Integer id;
+
+    @Email
+    @NotNull
+    @NotBlank
     private String email;
+
+    @Size(min = 8, max = 64)
+    @NotNull
+    @NotBlank
     private String motdepasse;
+
+    @NotNull
+    @NotBlank
     private String token;
+
+    @NotBlank
+    @NotNull
     private String role;
+
+    @NotBlank
+    @NotNull
     private String google;
+
+    @NotBlank
+    @NotNull
     private String created_at;
+
+    @NotBlank
+    @NotNull
     private String updated_at;
+
+    @NotBlank
+    @NotNull
     private Integer id_prospect;
+
+    @NotBlank
+    @NotNull
     private Integer id_historique;
 
     public Integer getId_prospect() {
@@ -37,6 +72,7 @@ public class Compte extends BaseModelORM{
     public Integer getId() {
         return id;
     }
+
 
     public String getTableName(){ return tableName; }
 
