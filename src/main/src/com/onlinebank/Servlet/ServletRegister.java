@@ -12,10 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
 import com.onlinebank.Utils.Verification;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -24,6 +22,7 @@ public class ServletRegister extends HttpServlet {
     private static final String VUE = "vues/register.jsp";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         /* Récupération des champs du formulaire. */
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -67,17 +66,18 @@ public class ServletRegister extends HttpServlet {
         ancienneteProParse = Integer.parseInt(anciennete);
 
         /*Création de l'objet à envoyé en BDD*/
-        Prospect test = new Prospect();
-        Compte testCompte = new Compte();
+
 
         System.out.println("coucou");
         if (!validerParse){
+            Prospect user = new Prospect();
+            Compte Compte = new Compte();
             System.out.println("debug");
             System.out.println("Debug Anciennete logement" + ancienneteLogementParse);
 
             Timestamp date = new Timestamp(System.currentTimeMillis());
             /*Création d'un Prospect*/
-            test
+            user
                 .setNom(name)
                 .setPrenom(firstname)
                 .setAge(ageParse)
@@ -98,14 +98,19 @@ public class ServletRegister extends HttpServlet {
                 .setUpdated_at(null);
 
             /*Envois en BDD*/
-            Database.insert(test);
+            Integer id = Database.insert(user);
 
+            System.out.println(id);
             String pw_hash = BCrypt.hashpw(password,BCrypt.gensalt());
-//            /*Création d'un compte*/
-            testCompte
+            /*Création d'un compte*/
+            Compte
                     .setEmail(email)
                     .setMotdepasse(pw_hash)
-                    .setToken()
+                    .setToken(generateRandomString())
+                    .setId_prospect(id)
+                    .setCreated_at(date)
+                    .setRole("user");
+            Database.insert(Compte);
         }
 
         request.getRequestDispatcher(VUE).forward(request,response);
@@ -116,27 +121,18 @@ public class ServletRegister extends HttpServlet {
     }
 
     protected String generateRandomString(){
+        String foo = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        char[] charArray = foo.toCharArray();
         int $length = 255;
-        String $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        int $charactersLength = $characters.length();
-        String $randomString = "";
+        String randomString = "";
         int $i;
+        Random r = new Random();
         for ($i = 0; $i < $length; $i++) {
-            
+            int n = r.nextInt(52);
+            randomString += charArray[n];
         }
-        return $randomString;
+        return randomString;
     }
-
-//    function generateRandomString($length = 10) {
-//        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-//        $charactersLength = strlen($characters);
-//        $randomString = '';
-//        for ($i = 0; $i < $length; $i++) {
-//            $randomString .= $characters[rand(0, $charactersLength - 1)];
-//        }
-//        return $randomString;
-//    }
-
 //    /**
 //     * Valide l'adresse mail saisie.
 //     */

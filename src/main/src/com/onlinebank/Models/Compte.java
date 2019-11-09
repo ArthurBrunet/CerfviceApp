@@ -4,6 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.Timestamp;
 
 public class Compte extends BaseModelORM{
     String tableName = "ob_compte";
@@ -36,19 +37,14 @@ public class Compte extends BaseModelORM{
 
     @NotBlank
     @NotNull
-    private String created_at;
+    private Timestamp created_at;
 
-    @NotBlank
-    @NotNull
-    private String updated_at;
+    private Timestamp updated_at;
 
     @NotBlank
     @NotNull
     private Integer id_prospect;
 
-    @NotBlank
-    @NotNull
-    private Integer id_historique;
 
     public Integer getId_prospect() {
         return id_prospect;
@@ -56,15 +52,6 @@ public class Compte extends BaseModelORM{
 
     public Compte setId_prospect(Integer id_prospect) {
         this.id_prospect = id_prospect;
-        return this;
-    }
-
-    public Integer getId_historique() {
-        return id_historique;
-    }
-
-    public Compte setId_historique(Integer id_historique) {
-        this.id_historique = id_historique;
         return this;
     }
     
@@ -121,20 +108,20 @@ public class Compte extends BaseModelORM{
         return this;
     }
 
-    public String getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public Compte setCreated_at(String created_at) {
+    public Compte setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
         return this;
     }
 
-    public String getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public Compte setUpdated_at(String updated_at) {
+    public Compte setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
         return this;
     }
