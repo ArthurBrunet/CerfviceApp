@@ -65,3 +65,12 @@ h2, tr, th{
 .swal2-progress-steps{
     max-width: 500px;
 }
+.page-item.active .page-link {
+    background-color: #333333;
+    color: #b8860b;
+    border-color: #333333;
+}
+.modifier{
+    margin: 15px;
+    padding: 3px;
+}

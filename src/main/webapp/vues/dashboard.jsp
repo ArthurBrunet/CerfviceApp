@@ -27,7 +27,7 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     </div>
                     <li class="nav-item menu-cote">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="#1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
                             <br/> Clients<span class="sr-only">(actuel)</span>
                         </a>
@@ -35,7 +35,7 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     </div>
                     <li class="nav-item menu-cote">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="#2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                             <br/> Produits
                         </a>
@@ -46,7 +46,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
 
-            <div class="table-responsive">
+            <div class="table-responsive" id="1">
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
@@ -70,10 +70,10 @@
                         <td>sit</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -85,10 +85,10 @@
                         <td>sit</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -100,10 +100,10 @@
                         <td>1,001</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -115,10 +115,10 @@
                         <td>sit</td>
                         <td>1,001</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -130,10 +130,10 @@
                         <td>sit</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -145,10 +145,10 @@
                         <td>1,001</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -160,10 +160,10 @@
                         <td>sit</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -175,10 +175,10 @@
                         <td>1,001</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                         En savoir plus
                     </button></td>
                     </tr>
@@ -190,10 +190,10 @@
                         <td>sit</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -205,10 +205,10 @@
                         <td>sit</td>
                         <td>1,001</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
                         </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
                             En savoir plus
                         </button></td>
                     </tr>
@@ -216,18 +216,88 @@
                     </tbody>
                 </table>
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-end">
+                    <ul class="pagination justify-content-end" id="2">
                         <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Précédent</a>
+                            <a class="page-link" href="#" aria-label="Previous" tabindex="-1">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1<span class="sr-only">(current)</span>
+                            </span></a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item">
-                            <a class="page-link" href="#">Suivant</a>
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Compte courant</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <h2>Livret jeune</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <h2>Livret A</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <h2>PEL</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <h2>Assurance vie</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <h2>Crédit conso</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <h2>Crédit immo</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <h2>Crédit auto</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <h2>Crédit étudiant</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
+                </div>
             </div>
         </main>
     </div>
@@ -239,7 +309,7 @@
     src="https://cdn.jsdelivr.net/npm/sweetalert2@9.1.5/dist/sweetalert2.all.min.js"
 </script>
 <script>
-    function sweetAlert(){
+    function savoirPlus(){
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
@@ -303,7 +373,7 @@
     }
 </script>
 <script>
-    function sweeetAlert() {
+    function sesProduits() {
         Swal.fire({
                 title: 'Produits clients: ',
                 html: '<h4>Compte courant <input type="checkbox" id="Compte courant"  /></h4><p/>' +
@@ -354,6 +424,31 @@
             Prescrire.usoCredetud = result.value.credetud
             Swal.fire(`Compte courant?: ${result.value.compcour}\nLivret jeune?: ${result.value.livjeu}\nLivret A?: ${result.value.liva}\nPEL?: ${result.value.pel}\nAssurance vie?: ${result.value.assuvie}\nCrédit consommation?: ${result.value.credcons}\nCrédit immobilier?: ${result.value.credimmo}\nCrédit auto?: ${result.value.credauto}\nCrédit étudiant?: ${result.value.credetud}`)
         })
+    }
+</script>
+<script>
+    function modfierProduits(){
+        (async () => {
+
+            const { value: formValues } = await Swal.fire({
+                title: 'Multiple inputs',
+                html:
+                    '<input id="swal-input1" class="swal2-input">' +
+                    '<input id="swal-input2" class="swal2-input">',
+                focusConfirm: false,
+                preConfirm: () => {
+                return [
+                    document.getElementById('swal-input1').value,
+                    document.getElementById('swal-input2').value
+                ]
+            }
+        })
+
+        if (formValues) {
+            Swal.fire(JSON.stringify(formValues))
+        }
+
+    })()
     }
 </script>
 </body>
