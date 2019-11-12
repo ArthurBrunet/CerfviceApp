@@ -87,6 +87,7 @@
                                                 <option value="celibataire">Célibataire</option>
                                                 <option value="couple">En couple</option>
                                                 <option value="veuve">Veuve</option>
+                                                <option value="etudiant">Etudiant</option>
                                             </select>
                                         </div>
                                     </div>

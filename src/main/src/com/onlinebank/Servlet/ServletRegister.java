@@ -33,6 +33,7 @@ public class ServletRegister extends HttpServlet {
         String age = request.getParameter("age");
         String situation = request.getParameter("situation");
         String enfants = request.getParameter("enfants");
+
         String situationpro = request.getParameter("situationpro");
         String revenu = request.getParameter("revenu");
         String anciennete = request.getParameter("anciennete");
@@ -65,53 +66,117 @@ public class ServletRegister extends HttpServlet {
         Integer ancienneteProParse;
         ancienneteProParse = Integer.parseInt(anciennete);
 
-        /*Création de l'objet à envoyé en BDD*/
+        String resultat;
+        Map<String, String> erreurs = new HashMap<String, String>();
 
+        /*Verification des champs de formulaire*/
+        Verification verification = new Verification();
 
-        System.out.println("coucou");
-        if (!validerParse){
-            Prospect user = new Prospect();
-            Compte Compte = new Compte();
-            System.out.println("debug");
-            System.out.println("Debug Anciennete logement" + ancienneteLogementParse);
-
-            Timestamp date = new Timestamp(System.currentTimeMillis());
-            /*Création d'un Prospect*/
-            user
-                .setNom(name)
-                .setPrenom(firstname)
-                .setAge(ageParse)
-                .setSituationfamiliale(situation)
-                .setRevenu(revenuParse)
-                .setDepensereguliere(depenseReguliereParse)
-                .setSituationprofessionnel(situationpro)
-                .setTelephone(telephone)
-                .setEnfants(enfantParse)
-                .setDepartement(departement)
-                .setTypehabitat(typehabitat)
-                .setSituationlogement(situationlogement)
-                .setAnciennetelogement(ancienneteLogementParse)
-                .setAncienneteprofessionnel(ancienneteProParse)
-                .setBloquepub(false)
-                .setActive(true)
-                .setCreated_at(date)
-                .setUpdated_at(null);
-
-            /*Envois en BDD*/
-            Integer id = Database.insert(user);
-
-            System.out.println(id);
-            String pw_hash = BCrypt.hashpw(password,BCrypt.gensalt());
-            /*Création d'un compte*/
-            Compte
-                    .setEmail(email)
-                    .setMotdepasse(pw_hash)
-                    .setToken(generateRandomString())
-                    .setId_prospect(id)
-                    .setCreated_at(date)
-                    .setRole("user");
-            Database.insert(Compte);
+        //Vérification mail
+        try {
+            verification.validationEmail(email);
+        } catch (Exception e) {
+            erreurs.put( email, e.getMessage() );
         }
+
+        //Verification mdp
+        try{
+            verification.validationMotsDePasse(password,confirm_password);
+        } catch (Exception e) {
+            erreurs.put(password, e.getMessage());
+        }
+
+        // Vérification Nom
+        try{
+            verification.validationNom(name);
+        } catch (Exception e){
+            erreurs.put(name, e.getMessage());
+        }
+
+        // Vérification Prénom
+        try{
+            verification.validationPrenom(firstname);
+        } catch (Exception e){
+            erreurs.put(firstname, e.getMessage());
+        }
+
+        // Vérification Telephone
+        try{
+            verification.validationtel(telephone);
+        } catch (Exception e){
+            erreurs.put(telephone, e.getMessage());
+        }
+
+        //Verification age
+        try{
+            verification.validationage(ageParse);
+        } catch (Exception e){
+            erreurs.put(age, e.getMessage());
+        }
+
+        //Verification situation
+        try {
+            verification.validationsituation(situation);
+        } catch (Exception e){
+            erreurs.put(situation, e.getMessage());
+        }
+
+        //Champs enfants
+        try {
+            verification.validationEnfant(enfantParse);
+        } catch (Exception e){
+            erreurs.put(enfants, e.getMessage());
+        }
+
+
+
+        System.out.println(erreurs);
+
+//        /*Création de l'objet à envoyé en BDD*/
+//        System.out.println("coucou");
+//        if (!validerParse){
+//            Prospect user = new Prospect();
+//            Compte Compte = new Compte();
+//            System.out.println("debug");
+//            System.out.println("Debug Anciennete logement" + ancienneteLogementParse);
+//
+//            Timestamp date = new Timestamp(System.currentTimeMillis());
+//            /*Création d'un Prospect*/
+//            user
+//                .setNom(name)
+//                .setPrenom(firstname)
+//                .setAge(ageParse)
+//                .setSituationfamiliale(situation)
+//                .setRevenu(revenuParse)
+//                .setDepensereguliere(depenseReguliereParse)
+//                .setSituationprofessionnel(situationpro)
+//                .setTelephone(telephone)
+//                .setEnfants(enfantParse)
+//                .setDepartement(departement)
+//                .setTypehabitat(typehabitat)
+//                .setSituationlogement(situationlogement)
+//                .setAnciennetelogement(ancienneteLogementParse)
+//                .setAncienneteprofessionnel(ancienneteProParse)
+//                .setBloquepub(false)
+//                .setActive(true)
+//                .setCreated_at(date)
+//                .setUpdated_at(null);
+//
+//            /*Envois en BDD*/
+//            Integer id = Database.insert(user);
+//
+//            System.out.println(id);
+//            String pw_hash = BCrypt.hashpw(password,BCrypt.gensalt());
+//            /*Création d'un compte*/
+//            Compte
+//                    .setEmail(email)
+//                    .setMotdepasse(pw_hash)
+//                    .setToken(generateRandomString())
+//                    .setId_prospect(id)
+//                    .setCreated_at(date)
+//                    .setRole("user");
+//            Database.insert(Compte);
+//        }
 
         request.getRequestDispatcher(VUE).forward(request,response);
     }
@@ -120,7 +185,7 @@ public class ServletRegister extends HttpServlet {
         request.getRequestDispatcher(VUE).forward(request,response);
     }
 
-    protected String generateRandomString(){
+    private String generateRandomString(){
         String foo = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         char[] charArray = foo.toCharArray();
         int $length = 255;
@@ -133,66 +198,4 @@ public class ServletRegister extends HttpServlet {
         }
         return randomString;
     }
-//    /**
-//     * Valide l'adresse mail saisie.
-//     */
-//    private void validationEmail( String email ) throws Exception {
-//        if ( email != null && email.trim().length() != 0 ) {
-//            if ( !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
-//                throw new Exception( "Merci de saisir une adresse mail valide." );
-//            }
-//        } else {
-//            throw new Exception( "Merci de saisir une adresse mail." );
-//        }
-//    }
-//
-//    /**
-//     * Valide les mots de passe saisis.
-//     */
-//    private void validationMotsDePasse( String motDePasse, String confirmation ) throws Exception{
-//        if (motDePasse != null && motDePasse.trim().length() != 0 && confirmation != null && confirmation.trim().length() != 0) {
-//            if (!motDePasse.equals(confirmation)) {
-//                throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
-//            } else if (motDePasse.trim().length() < 3) {
-//                throw new Exception("Les mots de passe doivent contenir au moins 3 caractères.");
-//            }
-//        } else {
-//            throw new Exception("Merci de saisir et confirmer votre mot de passe.");
-//        }
-//    }
-//
-//    /**
-//     * Valide le nom d'utilisateur saisi.
-//     */
-//    private void validationNom( String nom ) throws Exception {
-//        if ( nom != null && nom.trim().length() < 3 ) {
-//            throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
-//        }
-//    }
-//
-//    /**
-//     * Valide le prenom d'utilisateur saisi.
-//     */
-//    private void validationPrenom( String prenom) throws Exception {
-//        if ( prenom != null && prenom.trim().length() < 3 ) {
-//            throw new Exception("Le prenom de l'utilisateur doit contenir au moins 3 caractères");
-//        }
-//    }
-//
-//    /*Validation qu'il s'agit bien d'un numero de telephone*/
-//    private void validationtel(String telephone) throws Exception {
-//        if(!telephone.matches("(\\+[0-9][0-9][0-9]( [0-9][0-9])+)|([0-9]+)")){
-//            throw new Exception("Merci de saisir un telephone valide.");
-//        }
-//    }
-//
-//    /*Validation d'un champs vide ou non*/
-//    private void validationVide(String champs) throws Exception{
-//        if ( champs != null){
-//            throw new Exception("Le champs est vide");
-//        }
-//    }
-//
-//    private void validationsituation(String situation) throws Exception {
-//    }
 }
