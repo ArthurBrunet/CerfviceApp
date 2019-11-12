@@ -55,9 +55,9 @@
                         <th>Age</th>
                         <th>Situation familial</th>
                         <th>Situation profesionnelle</th>
-                        <th>Département</th>
                         <th>Situation de logement</th>
                         <th>Publicité</th>
+                        <th>Ses produits</th>
                         <th>En savoir plus</th>
                     </tr>
                     </thead>
@@ -68,9 +68,41 @@
                         <td>ipsum</td>
                         <td>dolor</td>
                         <td>sit</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                            En savoir plus
+                        </button></td>
+                    </tr>
+                    <tr>
                         <td>1,001</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                            En savoir plus
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
                         <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
                             En savoir plus
                         </button></td>
@@ -82,8 +114,10 @@
                         <td>dolor</td>
                         <td>sit</td>
                         <td>1,001</td>
-                        <td>Lorem</td>
                         <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
                         <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
                             En savoir plus
                         </button></td>
@@ -94,9 +128,26 @@
                         <td>ipsum</td>
                         <td>dolor</td>
                         <td>sit</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
+                            En savoir plus
+                        </button></td>
+                    </tr>
+                    <tr>
                         <td>1,001</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
                         <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
                             En savoir plus
                         </button></td>
@@ -107,9 +158,11 @@
                         <td>ipsum</td>
                         <td>dolor</td>
                         <td>sit</td>
-                        <td>1,001</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
                         <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
                             En savoir plus
                         </button></td>
@@ -119,49 +172,12 @@
                         <td>Lorem</td>
                         <td>ipsum</td>
                         <td>dolor</td>
-                        <td>sit</td>
                         <td>1,001</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
-                            En savoir plus
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
                         </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
                         <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
                         En savoir plus
                     </button></td>
@@ -172,9 +188,11 @@
                         <td>ipsum</td>
                         <td>dolor</td>
                         <td>sit</td>
-                        <td>1,001</td>
                         <td>Lorem</td>
                         <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
                         <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
                             En savoir plus
                         </button></td>
@@ -186,8 +204,10 @@
                         <td>dolor</td>
                         <td>sit</td>
                         <td>1,001</td>
-                        <td>Lorem</td>
                         <td>ipsum</td>
+                        <td><button type="button" class="btn btn-secondary" onclick="sweeetAlert()">
+                            Ses produits
+                        </button></td>
                         <td><button type="button" class="btn btn-secondary" onclick="sweetAlert()">
                             En savoir plus
                         </button></td>
@@ -280,6 +300,60 @@
         })
         }
     })
+    }
+</script>
+<script>
+    function sweeetAlert() {
+        Swal.fire({
+                title: 'Produits clients: ',
+                html: '<h4>Compte courant <input type="checkbox" id="Compte courant"  /></h4><p/>' +
+            '<h4>Livret jeune <input type="checkbox" id="Livret jeune"  /></h4>'+
+            '<h4>Livret A <input type="checkbox" id="Livret A"  /></h4><p/>' +
+            '<h4>PEL <input type="checkbox" id="PEL"  /></h4><p/>' +
+            '<h4>Assurance vie <input type="checkbox" id="Assurance vie"  /></h4>' +
+            '<h4>Credit conso <input type="checkbox" id="Credit conso"  /></h4><p/>' +
+            '<h4>Credit immo <input type="checkbox" id="Credit immo"  /></h4>' +
+            '<h4>Credit auto <input type="checkbox" id="Credit auto"  /></h4>' +
+            '<h4>Credit etudiant <input type="checkbox" id="Credit etudiant"  /></h4>',
+        confirmButtonText: 'Confirmer',
+            preConfirm: () => {
+            var compcour = Swal.getPopup().querySelector('#compcour').checked
+            var livjeu = Swal.getPopup().querySelector('#livjeu').checked
+            var liva = Swal.getPopup().querySelector('#liva').checked
+            var pel = Swal.getPopup().querySelector('#pel').checked
+            var assuvie = Swal.getPopup().querySelector('#assuvie').checked
+            var credcons = Swal.getPopup().querySelector('#credcons').checked
+            var credimmo = Swal.getPopup().querySelector('#credimmo').checked
+            var credauto = Swal.getPopup().querySelector('#credauto').checked
+            var credetud = Swal.getPopup().querySelector('#credetud').checked
+            console.log("Compte courant = " + compcour + " Livret jeune = " + livjeu + "Livret A = " + liva + " PEL = " + pel + "Assurance vie = " + assuvie + " Credit conso = " + credcons + "Credit immo = " + credimmo + " Credit auto = " + credauto + "Credit etudiant = " + credetud)
+
+
+            return {
+                compcour: compcour,
+                livjeu: livjeu,
+                liva: liva,
+                pel: pel,
+                assuvie: assuvie,
+                credcons: credcons,
+                credimmo: credimmo,
+                credauto: credauto,
+                credetud: credetud
+            }
+        }
+    })
+    .then((result) => {
+            Prescrire.usoCompcour = result.value.compcour
+            Prescrire.usoLivjeu = result.value.livjeu
+            Prescrire.usoLiva = result.value.liva
+            Prescrire.usoPel = result.value.pel
+            Prescrire.usoAssuvie = result.value.assuvie
+            Prescrire.usoCredcons = result.value.credcons
+            Prescrire.usoCredimo = result.value.credimmo
+            Prescrire.usoCredauto = result.value.credauto
+            Prescrire.usoCredetud = result.value.credetud
+            Swal.fire(`Compte courant?: ${result.value.compcour}\nLivret jeune?: ${result.value.livjeu}\nLivret A?: ${result.value.liva}\nPEL?: ${result.value.pel}\nAssurance vie?: ${result.value.assuvie}\nCrédit consommation?: ${result.value.credcons}\nCrédit immobilier?: ${result.value.credimmo}\nCrédit auto?: ${result.value.credauto}\nCrédit étudiant?: ${result.value.credetud}`)
+        })
     }
 </script>
 </body>
