@@ -10,8 +10,9 @@
         </div>
 
         <!-- Login Form -->
-        <form>
+        <form action="" method="post">
             <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email">
+            <h2><% out.print(session.getAttribute("email")); %><h2>
             <input type="text" id="password" class="fadeIn third" name="motdepasse" placeholder="Mot de passe">
             <input type="submit" class="fadeIn fourth" value="Se connecter">
         </form>
