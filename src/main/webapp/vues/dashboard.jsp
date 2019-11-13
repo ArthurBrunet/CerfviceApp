@@ -3,10 +3,10 @@
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img src="assets/img/logo_bank_gold_gold.png"></a>
-    <input class="form-control form-control-dark" type="text" placeholder="Albert Denouvel..." aria-label="Search">
+    <input class="form-control form-control-dark" type="search" placeholder="Albert Denouvel..." aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link rechercher" href="#">Rechercher</a>
+            <a class="nav-link" href="#">Rechercher</a>
         </li>
     </ul>
 </nav>
@@ -300,6 +300,17 @@
                 </div>
             </div>
         </main>
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item menu-cote">
+                        <a class="nav-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 </div>
 <script>
@@ -431,7 +442,7 @@
         (async () => {
 
             const { value: formValues } = await Swal.fire({
-                title: 'Multiple inputs',
+                title: 'Modifier',
                 html:
                     '<input id="swal-input1" class="swal2-input">' +
                     '<input id="swal-input2" class="swal2-input">',

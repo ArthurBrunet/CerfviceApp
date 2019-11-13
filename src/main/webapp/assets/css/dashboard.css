@@ -7,10 +7,6 @@ img{
     text-align: center ;
     vertical-align: middle;
 }
-.rechercher{
-    text-align: center ;
-    vertical-align: middle;
-}
 .row{
     margin-top: 5em;
 }
@@ -70,7 +66,20 @@ h2, tr, th{
     color: #b8860b;
     border-color: #333333;
 }
-.modifier{
-    margin: 15px;
-    padding: 3px;
+.modifier:last-child{
+    margin-bottom: 20px;
+    height: 45px;
+}
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .row {
+        margin-top: 0;
+    }
+
+    .modifier:last-child {
+        text-align: center;
+    }
 }
