@@ -2,6 +2,43 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
+
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+<!--definition des servelets-->
+  <servlet>
+    <servlet-name>home</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletAccueil</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletRegister</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletRegister</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletLogin</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletLogin</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeconnexionServlet</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.DeconnexionServlet</servlet-class>
+  </servlet>
+
+<!--mapping-->
+  <servlet-mapping>
+    <servlet-name>home</servlet-name>
+    <url-pattern>/accueil</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletRegister</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeconnexionServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
 </web-app>
