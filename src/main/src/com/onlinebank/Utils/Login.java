@@ -67,7 +67,7 @@ public class Login {
         }
         if (errors.get(0).equals("Conseiller")){
 
-            errors.add("/PAGECONSEILLER");
+            errors.add("/dashboard");
 
         }
         if (errors.get(0).equals("user")){
