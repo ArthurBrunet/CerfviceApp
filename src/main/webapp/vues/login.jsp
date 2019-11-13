@@ -24,7 +24,7 @@
              %>
             <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email">
             <input type="text" id="password" class="fadeIn third" name="motdepasse" placeholder="Mot de passe">
-            <input type="submit" class="fadeIn fourth" value="Se connecter">
+            <button type="submit" class="fadeIn fourth btn btn-secondary modifier">Se connecter</button>
         </form>
 
         <!-- Remind Passowrd -->

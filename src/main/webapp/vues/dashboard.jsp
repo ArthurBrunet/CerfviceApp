@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
-<body>
+<body class="body-dashboard">
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img src="assets/img/logo_bank_gold_gold.png"></a>
     <input class="form-control form-control-dark" type="search" placeholder="Albert Denouvel..." aria-label="Search">
@@ -12,7 +12,7 @@
 </nav>
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row row-dashboard">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">

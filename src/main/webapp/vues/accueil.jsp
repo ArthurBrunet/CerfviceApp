@@ -29,9 +29,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.
-                                    </div>
-                                    <div class="col">
+                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
                                         <button type="button" class="btn btn-secondary prap">Contactez-nous</button>
                                     </div>
                                 </div>
@@ -41,9 +39,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.
-                                    </div>
-                                    <div class="col">
+                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
                                         <button type="button" class="btn btn-secondary">Contactez-nous</button>
                                     </div>
                                 </div>
@@ -53,9 +49,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col ">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.
-                                    </div>
-                                    <div class="col prepa">
+                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
                                         <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
                                     </div>
                                 </div>
