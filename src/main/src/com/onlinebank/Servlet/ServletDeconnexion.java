@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "DeconnexionServlet")
-public class DeconnexionServlet extends HttpServlet {
+@WebServlet(name = "ServletDeconnexion")
+public class ServletDeconnexion extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
