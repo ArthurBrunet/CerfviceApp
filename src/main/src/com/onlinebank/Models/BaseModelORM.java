@@ -72,7 +72,7 @@ public class BaseModelORM {
                     //Du coup on ajoute les champs à insérer
                     fields.add(f.getName());
                     //Ici on donne une valeur a notre variable marks
-                    marks.add("");
+                    marks.add("?");
                 }
             } catch (Exception e) {
                 System.out.println(e);
@@ -250,16 +250,12 @@ public class BaseModelORM {
 
         try{
             statement = dbConnection.prepareStatement(selectQueryString, Statement.RETURN_GENERATED_KEYS);
-            Integer i = 1;
             for (Field f : getClass().getDeclaredFields())
             {
                 try
                 {
                     if (f.getName().compareTo("id") != 0)
                     {
-
-
-                        i = addParameter(statement, i, f);
 
                         String fieldName = ucFirst(f.getName());
                         String targetMethod = "get" + fieldName; // On établit la méthode de la requete et du coup get avec les champs retournés
@@ -296,25 +292,22 @@ public class BaseModelORM {
 
         for (Integer counter =0; counter < filters.size(); counter++){
             HashMap _filters = (HashMap) filters.get(counter);
-            String _parsedTest = (String) _filters.get("col") + " " + _filters.get("operator") + " " + "?";
+            String _parsedTest = (String) _filters.get("col") + " " + _filters.get("operator") + " " + _filters.get("value");
             _parsedFilters.add(_parsedTest);
         }
 
         selectQueryString = selectQueryString + String.join(" AND ", _parsedFilters);
-
         System.out.println(selectQueryString);
 
         try{
             statement = dbConnection.prepareStatement(selectQueryString, Statement.RETURN_GENERATED_KEYS);
-            Integer i = 1;
+
             for (Field f : getClass().getDeclaredFields())
             {
                 try
                 {
                     if (f.getName().compareTo("id") != 0)
                     {
-
-                        i = addParameter(statement, i, f);
 
                         String fieldName = ucFirst(f.getName());
                         String targetMethod = "get" + fieldName; // On établit la méthode de la requete et du coup get avec les champs retournés

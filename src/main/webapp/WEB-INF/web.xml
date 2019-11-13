@@ -9,6 +9,7 @@
 <!--definition des servelets-->
   <servlet>
     <servlet-name>home</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletAccueil</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>ServletRegister</servlet-name>
@@ -26,7 +27,7 @@
 <!--mapping-->
   <servlet-mapping>
     <servlet-name>home</servlet-name>
-    <url-pattern></url-pattern>
+    <url-pattern>/accueil</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ServletRegister</servlet-name>
