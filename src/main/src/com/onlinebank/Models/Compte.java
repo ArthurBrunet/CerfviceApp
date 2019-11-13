@@ -13,7 +13,6 @@ public class Compte extends BaseModelORM{
     private String created_at;
     private String updated_at;
     private Integer id_prospect;
-    private Integer id_historique;
 
     public Integer getId_prospect() {
         return id_prospect;
@@ -21,15 +20,6 @@ public class Compte extends BaseModelORM{
 
     public Compte setId_prospect(Integer id_prospect) {
         this.id_prospect = id_prospect;
-        return this;
-    }
-
-    public Integer getId_historique() {
-        return id_historique;
-    }
-
-    public Compte setId_historique(Integer id_historique) {
-        this.id_historique = id_historique;
         return this;
     }
     

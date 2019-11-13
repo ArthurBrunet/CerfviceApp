@@ -1,3 +1,4 @@
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
 <div class="wrapper fadeInDown">
@@ -10,9 +11,19 @@
         </div>
 
         <!-- Login Form -->
-        <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
+        <form action="" method="post">
+            <%
+            if (request.getAttribute("error") != null){
+                ArrayList error = (ArrayList) request.getAttribute("error");
+                %>
+            <h2>
+                <%out.print(error.get(0));%>
+            </h2>
+            <%
+            }
+             %>
+            <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email">
+            <input type="text" id="password" class="fadeIn third" name="motdepasse" placeholder="Mot de passe">
             <input type="submit" class="fadeIn fourth" value="Se connecter">
         </form>
 
