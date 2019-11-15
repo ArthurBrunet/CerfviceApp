@@ -1,3 +1,5 @@
+<%@ page import="com.onlinebank.Models.Prospect" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
 <body>
@@ -48,6 +50,12 @@
 
             <div class="table-responsive" id="1">
                 <table class="table table-striped table-sm">
+                    <%
+                        List<Prospect> i = (List<Prospect>) request.getAttribute("i");
+                        for (Prospect result: i){
+                            result.getPrenom();
+                        }
+                    %>
                     <thead>
                     <tr>
                         <th>Nom</th>
