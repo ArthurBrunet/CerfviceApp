@@ -2,6 +2,7 @@ package com.onlinebank.Models;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Prospect extends BaseModelORM{
@@ -19,9 +20,19 @@ public class Prospect extends BaseModelORM{
     @NotNull
     private String prenom;
 
+    public String getAge() {
+        return age;
+    }
+
+    public Prospect setAge(String age) {
+        this.age = age;
+        return this;
+    }
+
     @NotBlank
     @NotNull
-    private Integer age;
+    private String age;
+
 
     @NotBlank
     @NotNull
@@ -108,14 +119,6 @@ public class Prospect extends BaseModelORM{
         return this;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public Prospect setAge(Integer age) {
-        this.age = age;
-        return this;
-    }
 
     public String getSituationfamiliale() {
         return situationfamiliale;

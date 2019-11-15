@@ -70,7 +70,7 @@
                                             <label for="age">Age</label>
                                         </div>
                                         <div class="col">
-                                            <input type="number" class="form-control" id="age" name="age" placeholder="36">
+                                            <input type="date" class="form-control" id="age" name="age" placeholder="36">
                                         </div>
                                     </div>
                                 </div>
@@ -122,9 +122,9 @@
                                 </div>
                                 <div class="col">
                                     <select name="situationpro" id="situationpro" class="custom-select border">
-                                        <option value="cadre">Cadre</option>
-                                        <option value="salarie">Salarié</option>
-                                        <option value="sansemploi">Sans emploi</option>
+                                        <option value="CDD">CDD</option>
+                                        <option value="CDI">CDI</option>
+                                        <option value="Intérimaire">Intérimaire</option>
                                     </select>
                                 </div>
                             </div>
@@ -190,8 +190,8 @@
                                 <div class="col"><label for="typehabitat">Type d'habitat :</label></div>
                                 <div class="col">
                                     <select name="typehabitat" id="typehabitat" class="custom-select border">
-                                        <option value="1">Maison</option>
-                                        <option value="2">Appartement</option>
+                                        <option value="Maison">Maison</option>
+                                        <option value="Appartement">Appartement</option>
                                     </select>
                                 </div>
                             </div>
@@ -199,8 +199,8 @@
                                 <div class="col"><label for="situationlogement">Situation logement :</label></div>
                                 <div class="col">
                                     <select name="situationlogement" id="situationlogement" class="custom-select border">
-                                        <option value="1">Locataire</option>
-                                        <option value="1">Propriétaire</option>
+                                        <option value="Locataire">Locataire</option>
+                                        <option value="Proprietaire">Propriétaire</option>
                                     </select>
                                 </div>
                             </div>
@@ -219,12 +219,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <input type="checkbox" id="manipdonnees" name="manipdonnees"> J'autorise Cerfvice à manipuler mes données
-                </div>
-                <div>
-                    <input type="checkbox" id="notification" name="notification"> J'autorise à recevoir des notifications de la part de Cerfvice
                 </div>
                 <div class="centerBTN">
                     <input type="submit" id="valider" value="Valider" name="valider" class="button btn-primary">

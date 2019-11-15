@@ -3,15 +3,17 @@ package com.onlinebank.Servlet;
 import com.onlinebank.Models.Compte;
 import com.onlinebank.Models.Prospect;
 import com.onlinebank.Utils.Database;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.crypto.Data;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.onlinebank.Utils.Verification;
@@ -33,7 +35,6 @@ public class ServletRegister extends HttpServlet {
         String age = request.getParameter("age");
         String situation = request.getParameter("situation");
         String enfants = request.getParameter("enfants");
-
         String situationpro = request.getParameter("situationpro");
         String revenu = request.getParameter("revenu");
         String anciennete = request.getParameter("anciennete");
@@ -42,26 +43,19 @@ public class ServletRegister extends HttpServlet {
         String typehabitat = request.getParameter("typehabitat");
         String situationlogement = request.getParameter("situationlogement");
         String anciennetelogement = request.getParameter("anciennetelogement");
-//        String manipdonnees = request.getParameter("manipdonnees");
-        String notification = request.getParameter("notification");
+
         String valider = request.getParameter("valider");
-
-
         Boolean testNotif = true;
-        /*Transtypage String To Int*/
-        int ageParse;
-        ageParse = Integer.parseInt(age);
+
         int revenuParse;
         revenuParse = Integer.parseInt(revenu);
         int depenseReguliereParse;
         depenseReguliereParse = Integer.parseInt(depensereguliere);
         int enfantParse;
         enfantParse = Integer.parseInt(enfants);
-        boolean notificationParse;
-        notificationParse =Boolean.parseBoolean(notification);
         boolean validerParse;
         validerParse = Boolean.parseBoolean(valider);
-        Integer ancienneteLogementParse;
+        int ancienneteLogementParse;
         ancienneteLogementParse = Integer.parseInt(anciennetelogement);
         Integer ancienneteProParse;
         ancienneteProParse = Integer.parseInt(anciennete);
@@ -107,9 +101,9 @@ public class ServletRegister extends HttpServlet {
             erreurs.put(telephone, e.getMessage());
         }
 
-        //Verification age
+        //Champs age
         try{
-            verification.validationage(ageParse);
+            verification.validationDate(age);
         } catch (Exception e){
             erreurs.put(age, e.getMessage());
         }
@@ -128,56 +122,77 @@ public class ServletRegister extends HttpServlet {
             erreurs.put(enfants, e.getMessage());
         }
 
+        //Champs situation pro
+        try{
+            verification.validationsituationpro(situationpro);
+        } catch (Exception e){
+            erreurs.put(situationpro, e.getMessage());
+        }
 
+        //Champs type habitat
+        try{
+            verification.validationTypeHabitat(typehabitat);
+        } catch (Exception e){
+            erreurs.put(typehabitat, e.getMessage());
+        }
+
+        //Champs situation Logement
+        try{
+            verification.validationSituationLogement(situationlogement);
+        } catch (Exception e){
+            erreurs.put(situationlogement, e.getMessage());
+        }
+
+        //Champ anciennete logement
+        try{
+            verification.validationAnciennetelogement(ancienneteLogementParse);
+        } catch (Exception e){
+            erreurs.put(anciennetelogement, e.getMessage());
+        }
 
         System.out.println(erreurs);
+        if (erreurs.isEmpty()){
+        /*Création de l'objet à envoyé en BDD*/
+            Prospect user = new Prospect();
+            Compte Compte = new Compte();
 
-//        /*Création de l'objet à envoyé en BDD*/
-//        System.out.println("coucou");
-//        if (!validerParse){
-//            Prospect user = new Prospect();
-//            Compte Compte = new Compte();
-//            System.out.println("debug");
-//            System.out.println("Debug Anciennete logement" + ancienneteLogementParse);
-//
-//            Timestamp date = new Timestamp(System.currentTimeMillis());
-//            /*Création d'un Prospect*/
-//            user
-//                .setNom(name)
-//                .setPrenom(firstname)
-//                .setAge(ageParse)
-//                .setSituationfamiliale(situation)
-//                .setRevenu(revenuParse)
-//                .setDepensereguliere(depenseReguliereParse)
-//                .setSituationprofessionnel(situationpro)
-//                .setTelephone(telephone)
-//                .setEnfants(enfantParse)
-//                .setDepartement(departement)
-//                .setTypehabitat(typehabitat)
-//                .setSituationlogement(situationlogement)
-//                .setAnciennetelogement(ancienneteLogementParse)
-//                .setAncienneteprofessionnel(ancienneteProParse)
-//                .setBloquepub(false)
-//                .setActive(true)
-//                .setCreated_at(date)
-//                .setUpdated_at(null);
-//
-//            /*Envois en BDD*/
-//            Integer id = Database.insert(user);
-//
-//            System.out.println(id);
-//            String pw_hash = BCrypt.hashpw(password,BCrypt.gensalt());
-//            /*Création d'un compte*/
-//            Compte
-//                    .setEmail(email)
-//                    .setMotdepasse(pw_hash)
-//                    .setToken(generateRandomString())
-//                    .setId_prospect(id)
-//                    .setCreated_at(date)
-//                    .setRole("user");
-//            Database.insert(Compte);
-//        }
 
+            Timestamp date = new Timestamp(System.currentTimeMillis());
+            /*Création d'un Prospect*/
+            user
+                .setNom(name)
+                .setPrenom(firstname)
+                .setAge(age)
+                .setSituationfamiliale(situation)
+                .setRevenu(revenuParse)
+                .setDepensereguliere(depenseReguliereParse)
+                .setSituationprofessionnel(situationpro)
+                .setTelephone(telephone)
+                .setEnfants(enfantParse)
+                .setDepartement(departement)
+                .setTypehabitat(typehabitat)
+                .setSituationlogement(situationlogement)
+                .setAnciennetelogement(ancienneteLogementParse)
+                .setAncienneteprofessionnel(ancienneteProParse)
+                .setBloquepub(false)
+                .setActive(true)
+                .setCreated_at(date)
+                .setUpdated_at(null);
+
+            /*Envois en BDD*/
+            Integer id = Database.insert(user);
+
+            String pw_hash = BCrypt.hashpw(password,BCrypt.gensalt());
+            /*Création d'un compte*/
+            Compte
+                    .setEmail(email)
+                    .setMotdepasse(pw_hash)
+                    .setToken(generateRandomString())
+                    .setId_prospect(id)
+                    .setCreated_at(date)
+                    .setRole("user");
+            Database.insert(Compte);
+        }
         request.getRequestDispatcher(VUE).forward(request,response);
     }
 

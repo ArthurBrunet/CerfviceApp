@@ -2,6 +2,13 @@ package com.onlinebank.Utils;
 
 import com.onlinebank.Servlet.ServletRegister;
 
+import java.rmi.server.ExportException;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 public class Verification extends ServletRegister {
 
      /**
@@ -74,13 +81,45 @@ public class Verification extends ServletRegister {
         }
     }
 
-    public void validationage(int age) throws Exception{
-        if (age <= 0){
-            throw new Exception("Impossible d'avoir un âge inférieur ou égale à 0");
-        }
-        if (age >= 130){
-            throw new Exception("Impossible d'avoir un âge supérieur ou égale à 130");
+    public void validationsituationpro(String situation) throws Exception {
+        if (!situation.equals("CDD") && !situation.equals("CDI") && !situation.equals("Intérimaire") && !situation.equals("Entrepreneur")){
+            throw new Exception("Veuillez choisir une situation proposée");
         }
     }
 
+    public void validationage(int age) throws Exception{
+        if (age == Integer.parseInt(null)) {
+            throw new Exception("Veuillez remplir ce champs");
+        }
+    }
+
+    public void validationTypeHabitat(String typehabitat) throws Exception{
+        if (!typehabitat.equals("Maison") && !typehabitat.equals("Appartement")){
+            throw new Exception("Veuillez choisir une situation proposée");
+        }
+    }
+
+    public void validationSituationLogement(String situationLogement) throws Exception{
+        if (!situationLogement.equals("Locataire") && !situationLogement.equals("Proprietaire")){
+            throw new Exception("Veuillez choisir une situation proposée");
+        }
+    }
+
+    public void validationAnciennetelogement(int anciennete) throws Exception{
+        if (anciennete <= 0 ){
+            throw new Exception("Veuillez saisir un champs correct au formulaire");
+        }
+        if (anciennete >= 20 ){
+            throw new Exception("Veuillez saisir un champs correct au formulaire");
+        }
+    }
+    public void validationDate(String date) throws Exception {
+        if (date.isEmpty()){
+            throw new Exception("Veuillez saisir une date");
+        }
+    }
+    public String findAge (String birthday) {
+        String[] values = birthday.split("-", 0);
+        return values[2] + "-" + values[1] + "-" + values[0];
+    }
 }
