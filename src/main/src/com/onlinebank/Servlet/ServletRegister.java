@@ -101,20 +101,13 @@ public class ServletRegister extends HttpServlet {
             erreurs.put(telephone, e.getMessage());
         }
 
-        //Champs age
-        try{
-            verification.validationDate(age);
-        } catch (Exception e){
-            erreurs.put(age, e.getMessage());
-        }
-
         //Verification situation
         try {
             verification.validationsituation(situation);
         } catch (Exception e){
             erreurs.put(situation, e.getMessage());
         }
-
+        System.out.println(age);
         //Champs enfants
         try {
             verification.validationEnfant(enfantParse);
