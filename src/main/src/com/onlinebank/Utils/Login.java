@@ -55,7 +55,7 @@ public class Login {
             }
 
         }else {
-            errors.add("Veuillez remplire les champs ");
+            errors.add("Veuillez remplir les champs ");
         }
 
 

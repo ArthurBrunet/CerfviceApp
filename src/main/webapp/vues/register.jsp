@@ -221,7 +221,7 @@
                     </div>
                 </div>
                 <div class="centerBTN">
-                    <input type="submit" id="valider" value="Valider" name="valider" class="button btn-primary">
+                    <button type="submit" class="button btn-primary btn btn-secondary">Valider</button>
                 </div>
             </div>
 
