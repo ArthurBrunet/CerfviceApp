@@ -45,7 +45,6 @@ public class Compte extends BaseModelORM{
     @NotNull
     private Integer id_prospect;
 
-
     public Integer getId_prospect() {
         return id_prospect;
     }

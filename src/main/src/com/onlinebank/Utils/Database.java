@@ -172,6 +172,8 @@ public class Database {
 
             PreparedStatement _selectQuery = _object.getSelectQuery(db, fields, filter);
 
+
+
             try {
 
                 ResultSet rs = _selectQuery.executeQuery();
