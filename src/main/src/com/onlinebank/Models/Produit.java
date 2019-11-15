@@ -1,40 +1,108 @@
 package com.onlinebank.Models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Produit extends BaseModelORM {
+    @NotBlank
+    @NotNull
     private Integer id;
 
     String tableName = "ob_produit";
 
+    @NotBlank
+    @NotNull
+    @Size(min = 3,max = 50)
     private String nom;
+
+    @NotBlank
+    @NotNull
+    @Size(min = 3,max = 500)
     private String description;
+
+    @NotBlank
+    @NotNull
     private Integer minage;
+
+    @NotBlank
+    @NotNull
     private Integer maxage;
+
+    @NotBlank
+    @NotNull
     private String situationfamiliale;
+
+    @NotBlank
+    @NotNull
     private String situationprofessionnel;
+
+    @NotBlank
+    @NotNull
     private Integer revenumin;
+
+    @NotBlank
+    @NotNull
     private Integer revenumac;
+
+    @NotBlank
+    @NotNull
     private String depenseregulieremax;
+
+    @NotBlank
+    @NotNull
     private Integer enfants;
+
+    @NotBlank
+    @NotNull
     private String situationlogement;
+
+    @NotBlank
+    @NotNull
     private Integer minanciennetelogement;
+
+    @NotBlank
+    @NotNull
     private Integer maxanciennetelogement;
+
+    @NotBlank
+    @NotNull
     private Integer minancienneteprofessionnel;
+
+    @NotBlank
+    @NotNull
     private Integer maxancienneteprofessionnel;
+
+    @NotBlank
+    @NotNull
     private String created_at;
+
+    @NotBlank
+    @NotNull
     private String updated_at;
+
+    @NotBlank
+    @NotNull
     private Integer id_historique;
 
+    @NotBlank
+    @NotNull
     @Override
     public Integer getId() {
         return id;
     }
 
+    @NotBlank
+    @NotNull
     @Override
     public Produit setId(Integer id) {
         this.id = id;
         return this;
     }
 
+    public String getTablename() {
+        return tableName;
+    }
     public String getNom() {
         return nom;
     }

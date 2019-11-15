@@ -1,30 +1,92 @@
 package com.onlinebank.Models;
 
-public class Prospect {
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.sql.Date;
+import java.sql.Timestamp;
+
+public class Prospect extends BaseModelORM{
+
+    @NotBlank
+    @NotNull
     private Integer id;
 
-    String tableName = "ob_prospect";
 
+    @NotBlank
+    @NotNull
     private String nom;
+
+    @NotBlank
+    @NotNull
     private String prenom;
-    private Integer age;
+
+    public String getAge() {
+        return age;
+    }
+
+    public Prospect setAge(String age) {
+        this.age = age;
+        return this;
+    }
+
+    @NotBlank
+    @NotNull
+    private String age;
+
+
+    @NotBlank
+    @NotNull
     private String situationfamiliale;
+
+    @NotBlank
+    @NotNull
     private Integer revenu;
+
+    @NotBlank
+    @NotNull
     private Integer depensereguliere;
+
+    @NotBlank
+    @NotNull
     private String situationprofessionnel;
+
+    @NotBlank
+    @NotNull
     private String telephone;
+
+    @NotBlank
+    @NotNull
     private Integer enfants;
+
+    @NotBlank
+    @NotNull
     private String departement;
+
+    @NotBlank
+    @NotNull
     private String typehabitat;
+
+    @NotBlank
+    @NotNull
     private String situationlogement;
-    private String anciennetelogement;
-    private String ancienneteprofessionnel;
-    private String notification;
+
+    @NotBlank
+    @NotNull
+    private Integer anciennetelogement;
+
+    @NotBlank
+    @NotNull
+    private Integer ancienneteprofessionnel;
+
     private Boolean bloquepub;
+
     private Boolean active;
-    private String created_at;
-    private String updated_at;
-    private Integer id_compte;
+
+    private Timestamp created_at;
+
+    private Timestamp updated_at;
+
+    String tableName = "ob_prospect";
 
     public Integer getId() {
         return id;
@@ -33,6 +95,10 @@ public class Prospect {
     public Prospect setId(Integer id) {
         this.id = id;
         return this;
+    }
+
+    public String getTableName() {
+        return tableName;
     }
 
     public String getNom() {
@@ -53,14 +119,6 @@ public class Prospect {
         return this;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public Prospect setAge(Integer age) {
-        this.age = age;
-        return this;
-    }
 
     public String getSituationfamiliale() {
         return situationfamiliale;
@@ -143,32 +201,24 @@ public class Prospect {
         return this;
     }
 
-    public String getAnciennetelogement() {
+    public Integer getAnciennetelogement() {
         return anciennetelogement;
     }
 
-    public Prospect setAnciennetelogement(String anciennetelogement) {
+    public Prospect setAnciennetelogement(Integer anciennetelogement) {
         this.anciennetelogement = anciennetelogement;
         return this;
     }
 
-    public String getAncienneteprofessionnel() {
+    public Integer getAncienneteprofessionnel() {
         return ancienneteprofessionnel;
     }
 
-    public Prospect setAncienneteprofessionnel(String ancienneteprofessionnel) {
+    public Prospect setAncienneteprofessionnel(Integer ancienneteprofessionnel) {
         this.ancienneteprofessionnel = ancienneteprofessionnel;
         return this;
     }
 
-    public String getNotification() {
-        return notification;
-    }
-
-    public Prospect setNotification(String notification) {
-        this.notification = notification;
-        return this;
-    }
 
     public Boolean getBloquepub() {
         return bloquepub;
@@ -188,30 +238,22 @@ public class Prospect {
         return this;
     }
 
-    public String getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public Prospect setCreated_at(String created_at) {
+    public Prospect setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
         return this;
     }
 
-    public String getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public Prospect setUpdated_at(String updated_at) {
+    public Prospect setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
         return this;
     }
 
-    public Integer getId_compte() {
-        return id_compte;
-    }
-
-    public Prospect setId_compte(Integer id_compte) {
-        this.id_compte = id_compte;
-        return this;
-    }
 }

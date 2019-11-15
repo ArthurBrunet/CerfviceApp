@@ -1,17 +1,48 @@
 package com.onlinebank.Models;
 
-public class Compte extends BaseModelORM{
-    private Integer id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.sql.Timestamp;
 
+public class Compte extends BaseModelORM{
     String tableName = "ob_compte";
 
+    @NotBlank
+    @NotNull
+    private Integer id;
+
+    @Email
+    @NotNull
+    @NotBlank
     private String email;
+
+    @Size(min = 8, max = 64)
+    @NotNull
+    @NotBlank
     private String motdepasse;
+
+    @NotNull
+    @NotBlank
     private String token;
+
+    @NotBlank
+    @NotNull
     private String role;
+
+    @NotBlank
+    @NotNull
     private String google;
-    private String created_at;
-    private String updated_at;
+
+    @NotBlank
+    @NotNull
+    private Timestamp created_at;
+
+    private Timestamp updated_at;
+
+    @NotBlank
+    @NotNull
     private Integer id_prospect;
 
     public Integer getId_prospect() {
@@ -27,6 +58,7 @@ public class Compte extends BaseModelORM{
     public Integer getId() {
         return id;
     }
+
 
     public String getTableName(){ return tableName; }
 
@@ -75,20 +107,20 @@ public class Compte extends BaseModelORM{
         return this;
     }
 
-    public String getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public Compte setCreated_at(String created_at) {
+    public Compte setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
         return this;
     }
 
-    public String getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public Compte setUpdated_at(String updated_at) {
+    public Compte setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
         return this;
     }

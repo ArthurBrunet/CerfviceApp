@@ -43,15 +43,22 @@
       <version>1.2</version>
     </dependency>
     <dependency>
-      <groupId>org.mindrot</groupId>
-      <artifactId>jbcrypt</artifactId>
-      <version>0.3m</version>
-    </dependency>
-    <dependency>
       <groupId>javax.mail</groupId>
       <artifactId>javax.mail-api</artifactId>
       <version>1.6.2</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.1.0.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mindrot</groupId>
+      <artifactId>jbcrypt</artifactId>
+      <version>0.4</version>
+    </dependency>
+
   </dependencies>
 
   <build>

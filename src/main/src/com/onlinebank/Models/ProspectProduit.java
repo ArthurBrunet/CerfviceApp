@@ -1,13 +1,30 @@
 package com.onlinebank.Models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class ProspectProduit  extends BaseModelORM {
+
+    @NotBlank
+    @NotNull
     private Integer id;
 
     String tableName = "ob_prospectproduit";
 
+    @NotBlank
+    @NotNull
     private Integer id_prospect;
+
+    @NotBlank
+    @NotNull
     private Integer id_produit;
+
+    @NotBlank
+    @NotNull
     private String created_at;
+
+    @NotBlank
+    @NotNull
     private String updated_at;
 
     @Override
@@ -19,6 +36,10 @@ public class ProspectProduit  extends BaseModelORM {
     public ProspectProduit setId(Integer id) {
         this.id = id;
         return this;
+    }
+
+    public String getTablename() {
+        return tableName;
     }
 
     public Integer getId_prospect() {
