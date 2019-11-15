@@ -226,7 +226,7 @@
                     <input type="checkbox" name="notification"> J'autorise à recevoir des notifications de la part de Cerfvice
                 </div>
                 <div class="centerBTN">
-                    <input type="submit" value="Valider" name="valider" class="button btn-primary">
+                    <button type="submit" class="button btn-primary btn btn-secondary">Valider</button>
                 </div>
             </div>
 
