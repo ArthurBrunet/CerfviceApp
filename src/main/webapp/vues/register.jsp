@@ -2,7 +2,7 @@
 <%@ include file="header.jsp"%>
 <div class="wrapper fadeInDown">
     <div id="formContentte">
-        <form action="">
+        <form action="register" method="POST">
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -14,7 +14,7 @@
                                     <label for="email">Adresse email</label>
                                 </div>
                                 <div class="col">
-                                    <input type="email" class="form-control" placeholder="error@mail.com" id="email">
+                                    <input type="email" class="form-control" placeholder="error@mail.com" id="email" name="email">
                                 </div>
                             </div>
                             <div class="row">
@@ -60,7 +60,7 @@
                                             <label for="telephone">Téléphone:</label>
                                         </div>
                                         <div class="col">
-                                            <input type="tel" id="telephone" class="form-control" name="tel" placeholder="+33 X XX XX XX XX">
+                                            <input type="tel" id="telephone" class="form-control" name="telephone" placeholder="+33 X XX XX XX XX">
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                             <label for="age">Age</label>
                                         </div>
                                         <div class="col">
-                                            <input type="number" class="form-control" id="age" placeholder="36">
+                                            <input type="date" class="form-control" id="age" name="age" placeholder="36">
                                         </div>
                                     </div>
                                 </div>
@@ -83,10 +83,11 @@
                                             <label for="situation">Situation familiale:</label>
                                         </div>
                                         <div class="col">
-                                            <select name="sitation" id="situation" class="custom-select border">
+                                            <select name="situation" id="situation" class="custom-select border">
                                                 <option value="celibataire">Célibataire</option>
                                                 <option value="couple">En couple</option>
                                                 <option value="veuve">Veuve</option>
+                                                <option value="etudiant">Etudiant</option>
                                             </select>
                                         </div>
                                     </div>
@@ -121,9 +122,9 @@
                                 </div>
                                 <div class="col">
                                     <select name="situationpro" id="situationpro" class="custom-select border">
-                                        <option value="cadre">Cadre</option>
-                                        <option value="salarie">Salarié</option>
-                                        <option value="sansemploi">Sans emploi</option>
+                                        <option value="CDD">CDD</option>
+                                        <option value="CDI">CDI</option>
+                                        <option value="Intérimaire">Intérimaire</option>
                                     </select>
                                 </div>
                             </div>
@@ -144,10 +145,10 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label for="ancienneté">Ancienneté professionel :</label>
+                                    <label for="anciennete">Ancienneté professionel :</label>
                                 </div>
                                 <div class="col">
-                                    <select name="ancienneté" id="ancienneté" class="custom-select border">
+                                    <select name="anciennete" id="anciennete" class="custom-select border">
                                         <option value="1">0 à 2 ans</option>
                                         <option value="2">2 à 5 ans</option>
                                         <option value="3">5 à 10 ans</option>
@@ -189,8 +190,8 @@
                                 <div class="col"><label for="typehabitat">Type d'habitat :</label></div>
                                 <div class="col">
                                     <select name="typehabitat" id="typehabitat" class="custom-select border">
-                                        <option value="1">Maison</option>
-                                        <option value="2">Appartement</option>
+                                        <option value="Maison">Maison</option>
+                                        <option value="Appartement">Appartement</option>
                                     </select>
                                 </div>
                             </div>
@@ -198,8 +199,8 @@
                                 <div class="col"><label for="situationlogement">Situation logement :</label></div>
                                 <div class="col">
                                     <select name="situationlogement" id="situationlogement" class="custom-select border">
-                                        <option value="1">Locataire</option>
-                                        <option value="1">Propriétaire</option>
+                                        <option value="Locataire">Locataire</option>
+                                        <option value="Proprietaire">Propriétaire</option>
                                     </select>
                                 </div>
                             </div>
@@ -218,12 +219,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <input type="checkbox" name="manipdonnees"> J'autorise Cerfvice à manipuler mes données
-                </div>
-                <div>
-                    <input type="checkbox" name="notification"> J'autorise à recevoir des notifications de la part de Cerfvice
                 </div>
                 <div class="centerBTN">
                     <button type="submit" class="button btn-primary btn btn-secondary">Valider</button>

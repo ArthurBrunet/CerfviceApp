@@ -1,14 +1,37 @@
 package com.onlinebank.Models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class Historique extends BaseModelORM{
+    @NotBlank
+    @NotNull
     private Integer id;
 
     String tableName= "ob_historique";
+
+    @NotBlank
+    @NotNull
     private String dateappel;
+
+    @NotBlank
+    @NotNull
     private String resultat_appel;
+
+    @NotBlank
+    @NotNull
     private String created_at;
+
+    @NotBlank
+    @NotNull
     private String updated_at;
+
+    @NotBlank
+    @NotNull
     private Integer id_produit;
+
+    @NotBlank
+    @NotNull
     private Integer id_compte;
 
     @Override
@@ -20,6 +43,10 @@ public class Historique extends BaseModelORM{
     public Historique setId(Integer id) {
         this.id = id;
         return this;
+    }
+
+    public String getTablename() {
+        return tableName;
     }
 
     public String getDateappel() {
