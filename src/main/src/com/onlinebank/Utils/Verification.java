@@ -124,8 +124,19 @@ public class Verification extends ServletRegister {
     }
 
     public void validationBoolean(String champs) throws Exception{
-        if (!champs.equals("true") && !champs.equals("false")){
+        if (!champs.equals("on") && !champs.equals("null")){
             throw new Exception("Veuillez choisir un choix valide");
         }
+    }
+
+    public boolean transformStringtoBool(String input){
+        boolean toto = false;
+        if (input.equals("on")){
+            toto = true;
+        }
+        if (input.equals("null")){
+            toto = false;
+        }
+        return toto;
     }
 }
