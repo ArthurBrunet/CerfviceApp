@@ -5,7 +5,7 @@
 
 Ceci est le carnet de bord du **Cerfvice** sur le projet de **Online Bank**, chaque avancement, chaque trace sera tenue à jour sur ce document.
 
-# Intalle
+# Intallation
 
 1 : Installer Git.
 
