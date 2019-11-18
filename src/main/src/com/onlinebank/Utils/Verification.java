@@ -76,7 +76,7 @@ public class Verification extends ServletRegister {
     }
 
     public void validationsituation(String situation) throws Exception {
-        if (!situation.equals("celibataire") && !situation.equals("veuf") && !situation.equals("En couple") && !situation.equals("Etudiant")){
+        if (!situation.equals("celibataire") && !situation.equals("veuve") && !situation.equals("couple") && !situation.equals("etudiant")){
             throw new Exception("Veuillez choisir une situation proposée");
         }
     }
