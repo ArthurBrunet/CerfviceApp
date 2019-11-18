@@ -21,7 +21,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet(name = "ServletRegister")
 public class ServletRegister extends HttpServlet {
-    private static final String VUE = "vues/register.jsp";
+    private static final String VUE = "/vues/register.jsp";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -43,6 +43,19 @@ public class ServletRegister extends HttpServlet {
         String typehabitat = request.getParameter("typehabitat");
         String situationlogement = request.getParameter("situationlogement");
         String anciennetelogement = request.getParameter("anciennetelogement");
+        String livretjeune= request.getParameter("verifLj");
+        String CompteCourant= request.getParameter("verifCcp");
+        String livretA= request.getParameter("verifLa");
+        String pel= request.getParameter("verifPel");
+        String assuranceVie= request.getParameter("verifAv");
+        String creditetudiant= request.getParameter("verifCe");
+        String creditconsommation= request.getParameter("verifCc");
+        String creditimmobilier= request.getParameter("verifCi");
+        String creditautomobile= request.getParameter("verifCa");
+
+        String ATT_ERREURS = "erreurs";
+        String ATT_RESULTAT = "resultat";
+
 
         String valider = request.getParameter("valider");
         Boolean testNotif = true;
@@ -107,7 +120,6 @@ public class ServletRegister extends HttpServlet {
         } catch (Exception e){
             erreurs.put(situation, e.getMessage());
         }
-        System.out.println(age);
         //Champs enfants
         try {
             verification.validationEnfant(enfantParse);
@@ -143,8 +155,19 @@ public class ServletRegister extends HttpServlet {
             erreurs.put(anciennetelogement, e.getMessage());
         }
 
+        boolean boolLivretJeune = verification.transformStringtoBool(livretjeune);
+        boolean boolCompteCourant = verification.transformStringtoBool(CompteCourant);
+        boolean boolLivretA = verification.transformStringtoBool(livretA);
+        boolean boolPel = verification.transformStringtoBool(pel);
+        boolean boolAssuranceVie = verification.transformStringtoBool(assuranceVie);
+        boolean boolCreditetudiant = verification.transformStringtoBool(creditetudiant);
+        boolean boolCreditConsommation = verification.transformStringtoBool(creditconsommation);
+        boolean boolcreditImmobilier = verification.transformStringtoBool(creditimmobilier);
+        boolean boolCreditAutomobile = verification.transformStringtoBool(creditautomobile);
+
         System.out.println(erreurs);
         if (erreurs.isEmpty()){
+            resultat="Succès de l'inscriptions";
         /*Création de l'objet à envoyé en BDD*/
             Prospect user = new Prospect();
             Compte Compte = new Compte();
@@ -170,7 +193,16 @@ public class ServletRegister extends HttpServlet {
                 .setBloquepub(false)
                 .setActive(true)
                 .setCreated_at(date)
-                .setUpdated_at(null);
+                .setUpdated_at(null)
+                .setVerifLj(boolLivretJeune)
+                .setVerifCcp(boolCompteCourant)
+                .setVerifLa(boolLivretA)
+                .setVerifPel(boolPel)
+                .setVerifAv(boolAssuranceVie)
+                .setVerifCe(boolCreditetudiant)
+                .setVerifCc(boolCreditConsommation)
+                .setVerifCi(boolcreditImmobilier)
+                .setVerifCa(boolCreditAutomobile);
 
             /*Envois en BDD*/
             Integer id = Database.insert(user);
@@ -185,8 +217,12 @@ public class ServletRegister extends HttpServlet {
                     .setCreated_at(date)
                     .setRole("user");
             Database.insert(Compte);
+        }else {
+            resultat = "Echec de l'inscription.";
         }
-        request.getRequestDispatcher(VUE).forward(request,response);
+        request.setAttribute(ATT_ERREURS, erreurs);
+        request.setAttribute(ATT_RESULTAT, resultat);
+        this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

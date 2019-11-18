@@ -1,5 +1,7 @@
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
+
 <div class="wrapper fadeInDown">
     <div id="formContentte">
         <form action="register" method="POST">
@@ -163,10 +165,10 @@
                                 </div>
                                 <div class="col">
                                     <select name="depensereguliere" id="depensereguliere" class="custom-select border">
-                                        <option value="1">0 à 2 ans</option>
-                                        <option value="2">2 à 5 ans</option>
-                                        <option value="3">5 à 10 ans</option>
-                                        <option value="3">+ de 10 ans</option>
+                                        <option value="1">- 500 euros / mois</option>
+                                        <option value="2">Entre 500 et 1000 mois</option>
+                                        <option value="3">Entre 1000 et 2000 mois</option>
+                                        <option value="3">+ 2000 euros / mois</option>
                                     </select>
                                 </div>
                             </div>
@@ -220,6 +222,53 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-center goldpolice">Informations compte ?</h2>
+                        <hr class="gold">
+                        <div class="row">
+                            <div class="col"><label for="verifLj">Possession d'un livret jeune ?</label></div>
+                            <input type="checkbox" name="verifLj" id="verifLj" class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col"><label for="verifCcp">Possession d'un compte courant ?</label></div>
+                            <input type="checkbox" name="verifCcp" id="verifCcp" class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col"><label for="verifLa">Possession d'un livret A ?</label></div>
+                            <input type="checkbox" name="verifLa" id="verifLa" class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col"><label for="verifPel">Possession d'un plan d'épargne logement ?</label></div>
+                            <input type="checkbox" name="verifPel" id="verifPel" class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col"><label for="verifAv">Possession d'une assurance vie ?</label></div>
+                            <input type="checkbox" name="verifAv" id="verifAv" class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col"><label for="verifCe">Possession d'un crédit etudiant ?</label></div>
+                            <input type="checkbox" name="verifCe" id="verifCe" class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col"><label for="verifCc">Possession d'un crédit consommation ?</label></div>
+                            <input type="checkbox" name="verifCc" id="verifCc" class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col"><label for="verifCi">Possession d'un crédit immobilier ?</label></div>
+                            <input type="checkbox" name="verifCi" id="verifCi" class="col">
+                        </div>
+                        <div class="row">
+                            <div class="col"><label for="verifCa">Possession d'un crédit automobile ?</label></div>
+                            <input type="checkbox" name="verifCa" id="verifCa" class="col">
+                        </div>
+
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+
                 <div class="centerBTN">
                     <button type="submit" class="button btn-primary btn btn-secondary">Valider</button>
                 </div>

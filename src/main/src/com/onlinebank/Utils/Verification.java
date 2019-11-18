@@ -123,9 +123,13 @@ public class Verification extends ServletRegister {
         return values[2] + "-" + values[1] + "-" + values[0];
     }
 
-    public void validationBoolean(String champs) throws Exception{
-        if (!champs.equals("true") && !champs.equals("false")){
-            throw new Exception("Veuillez choisir un choix valide");
+    public boolean transformStringtoBool(String input){
+        boolean toto = false;
+        if (input == null){
+            toto = false;
+        }else {
+            toto = true;
         }
+        return toto;
     }
 }
