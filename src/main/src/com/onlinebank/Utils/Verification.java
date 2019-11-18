@@ -122,4 +122,10 @@ public class Verification extends ServletRegister {
         String[] values = birthday.split("-", 0);
         return values[2] + "-" + values[1] + "-" + values[0];
     }
+
+    public void validationBoolean(String champs) throws Exception{
+        if (!champs.equals("true") && !champs.equals("false")){
+            throw new Exception("Veuillez choisir un choix valide");
+        }
+    }
 }
