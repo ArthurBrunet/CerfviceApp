@@ -250,7 +250,6 @@ public class BaseModelORM {
 
         try{
             statement = dbConnection.prepareStatement(selectQueryString, Statement.RETURN_GENERATED_KEYS);
-
             for (Field f : getClass().getDeclaredFields())
             {
                 try
@@ -298,7 +297,6 @@ public class BaseModelORM {
         }
 
         selectQueryString = selectQueryString + String.join(" AND ", _parsedFilters);
-
         System.out.println(selectQueryString);
 
         try{
