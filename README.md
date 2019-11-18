@@ -86,12 +86,12 @@ Il a été convenu lors de la formulation du contrat, l'entreprise OnlineBank à
 |**Fonction SELECT**||**X**||||
 |**Création BDD**|||**X**|**X**||
 |**Système Notifications**||||||
-|**Login Client/Admin/Conseiller**||||||
+|**Login Client/Admin/Conseiller**||**X**||||
 |**Double Authentification**||||||
 |**Système Notifications**||||||
-|**Ciblage Marketing**||||||
-|**Dashboard Admin**||||||
-|**Inscription Client**||||||
+|**Ciblage Marketing**|**X**|||**X**||
+|**Dashboard Admin**||**X**|||**X**|
+|**Inscription Client**|||**X**|||
 |**Mise en Production**||||||
 |**Ecriture Spitch**||||||
 |**TEST**||||||
