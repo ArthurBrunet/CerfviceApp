@@ -27,6 +27,10 @@
     <servlet-name>ServletDashboard</servlet-name>
     <servlet-class>com.onlinebank.Servlet.ServletDashboard</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ServletConseiller</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletConseiller</servlet-class>
+  </servlet>
 
 <!--mapping-->
   <servlet-mapping>
@@ -48,6 +52,10 @@
   <servlet-mapping>
     <servlet-name>ServletDashboard</servlet-name>
     <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletConseiller</servlet-name>
+    <url-pattern>/dashboardconseiller</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
