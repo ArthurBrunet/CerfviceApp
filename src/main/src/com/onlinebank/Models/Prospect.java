@@ -86,6 +86,105 @@ public class Prospect extends BaseModelORM{
 
     private Timestamp updated_at;
 
+    private Boolean verifLj;
+
+    private Boolean verifCcp;
+
+    private Boolean verifLa;
+
+    private Boolean verifPel;
+
+    private Boolean verifAv;
+
+    private Boolean verifCe;
+
+    private Boolean verifCc;
+
+    private Boolean verifCi;
+
+    private Boolean verifCa;
+
+    public Boolean getVerifLj() {
+        return verifLj;
+    }
+
+    public Prospect setVerifLj(Boolean verifLj) {
+        this.verifLj = verifLj;
+        return this;
+    }
+
+    public Boolean getVerifCcp() {
+        return verifCcp;
+    }
+
+    public Prospect setVerifCcp(Boolean verifCcp) {
+        this.verifCcp = verifCcp;
+        return this;
+    }
+
+    public Boolean getVerifLa() {
+        return verifLa;
+    }
+
+    public Prospect setVerifLa(Boolean verifLa) {
+        this.verifLa = verifLa;
+        return this;
+    }
+
+    public Boolean getVerifPel() {
+        return verifPel;
+    }
+
+    public Prospect setVerifPel(Boolean verifPel) {
+        this.verifPel = verifPel;
+        return this;
+    }
+
+    public Boolean getVerifAv() {
+        return verifAv;
+    }
+
+    public Prospect setVerifAv(Boolean verifAv) {
+        this.verifAv = verifAv;
+        return this;
+    }
+
+    public Boolean getVerifCe() {
+        return verifCe;
+    }
+
+    public Prospect setVerifCe(Boolean verifCe) {
+        this.verifCe = verifCe;
+        return this;
+    }
+
+    public Boolean getVerifCc() {
+        return verifCc;
+    }
+
+    public Prospect setVerifCc(Boolean verifCc) {
+        this.verifCc = verifCc;
+        return this;
+    }
+
+    public Boolean getVerifCi() {
+        return verifCi;
+    }
+
+    public Prospect setVerifCi(Boolean verifCi) {
+        this.verifCi = verifCi;
+        return this;
+    }
+
+    public Boolean getVerifCa() {
+        return verifCa;
+    }
+
+    public Prospect setVerifCa(Boolean verifCa) {
+        this.verifCa = verifCa;
+        return this;
+    }
+
     String tableName = "ob_prospect";
 
     public Integer getId() {
