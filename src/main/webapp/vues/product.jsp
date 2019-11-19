@@ -2,7 +2,7 @@
 <%@ include file="header.jsp"%>
 <div class="wrapper fadeInDown">
     <div id="formContentte">
-        <form action="register" method="POST">
+        <form action="" method="POST">
             <div class="container">
                 <div class="row">
                     <div class="col">
