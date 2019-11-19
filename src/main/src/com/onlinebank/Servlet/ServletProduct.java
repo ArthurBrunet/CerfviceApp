@@ -24,7 +24,7 @@ public class ServletProduct extends HttpServlet {
         HttpSession session = request.getSession();
         Produit produit = new Produit();
         Timestamp date=  new Timestamp(System.currentTimeMillis());
-//        if (session.getAttribute("role").equals("conseiller") || session.getAttribute("role").equals("admin")) {
+        if (session.getAttribute("role").equals("conseiller") || session.getAttribute("role").equals("admin")) {
             String nom = request.getParameter("nom");
             String description = request.getParameter("description");
             String minage = request.getParameter("minage");
@@ -45,55 +45,51 @@ public class ServletProduct extends HttpServlet {
                 int minageParse = Integer.parseInt(minage);
                 produit.setMinage(minageParse);
             }else {
-                produit.setMinage(null);
+                produit.setMinage(0);
             }
 
             if (!maxage.isEmpty()){
                 int maxageParse = Integer.parseInt(maxage);
                 produit.setMaxage(maxageParse);
+
             }else {
-                produit.setMaxage(null);
+                produit.setMaxage(999);
             }
 
             if (!revenumin.isEmpty()) {
                 int revenuminParse = Integer.parseInt(revenumin);
                 produit.setRevenumin(revenuminParse);
             }else {
-                produit.setRevenumin(null);
+                produit.setRevenumin(0);
             }
 
             if (!revenumax.isEmpty()){
                 int revenumaxParse = Integer.parseInt(revenumax);
                 produit.setRevenumax(revenumaxParse);
             }else {
-                produit.setRevenumax(null);
+                produit.setRevenumax(9999);
             }
 
             Database.insert(produit);
 
-            this.getServletContext().getRequestDispatcher(url).forward(request, response);
-//        }else if (session.getAttribute("role").equals("user")){
-//            response.sendRedirect(request.getContextPath()+"/accueil");
-//        }else{
-//            response.sendRedirect(request.getContextPath()+"/login");
-//        }
+           response.sendRedirect(request.getContextPath()+"/dashboard");
+        }else if (session.getAttribute("role").equals("user")){
+            response.sendRedirect(request.getContextPath()+"/accueil");
+        }else{
+            response.sendRedirect(request.getContextPath()+"/login");
+        }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<String> fields = new ArrayList<>();
-        fields.add("*");
-        Produit produitss = new Produit();
-        List<Produit> listproduits = Database.select(produitss,fields);
-        System.out.println(listproduits);
         HttpSession session = request.getSession();
 
-//        if (session.getAttribute("role").equals("conseiller") || session.getAttribute("role").equals("admin")) {
+        if (session.getAttribute("role").equals("conseiller") || session.getAttribute("role").equals("admin")) {
             this.getServletContext().getRequestDispatcher(url).forward(request, response);
-//        }else if (session.getAttribute("role").equals("user")){
-//            response.sendRedirect(request.getContextPath()+"/accueil");
-//        }else{
-//            response.sendRedirect(request.getContextPath()+"/login");
-//        }
+        }else if (session.getAttribute("role").equals("user")){
+            response.sendRedirect(request.getContextPath()+"/accueil");
+        }else{
+            response.sendRedirect(request.getContextPath()+"/login");
+        }
     }
 }
