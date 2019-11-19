@@ -1,6 +1,8 @@
 package com.onlinebank.Models;
 
-
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 
 public class Produit extends BaseModelORM {
@@ -22,7 +24,7 @@ public class Produit extends BaseModelORM {
     private String situationprofessionnel;
 
     private Integer revenumin;
-
+  
     private Integer revenumax;
 
     private String depenseregulieremax;
@@ -119,7 +121,7 @@ public class Produit extends BaseModelORM {
         return this;
     }
 
-    public Integer getRevenumax() {
+    public Integer getRevenuMax() {
         return revenumax;
     }
 
@@ -208,5 +210,4 @@ public class Produit extends BaseModelORM {
         this.updated_at = updated_at;
         return this;
     }
-
 }

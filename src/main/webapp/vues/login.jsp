@@ -33,7 +33,7 @@
 
         <!-- Remind Passowrd -->
         <div id="formFooter">
-            <a class="underlineHover" href="#">Mot de passe oublié ?</a>
+            <a class="underlineHover" href="<% out.print(request.getContextPath());%>/register">Inscription</a>
         </div>
 
     </div>
