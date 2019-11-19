@@ -4,7 +4,7 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContentte">
-        <form action="register" method="POST">
+        <form action="register" method="POST" accept-charset="ISO-8859-1">
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -126,7 +126,7 @@
                                     <select name="situationpro" id="situationpro" class="custom-select border">
                                         <option value="CDD">CDD</option>
                                         <option value="CDI">CDI</option>
-                                        <option value="Intérimaire">Intérimaire</option>
+                                        <option value="Interimaire">Intérimaire</option>
                                     </select>
                                 </div>
                             </div>
