@@ -135,14 +135,7 @@
                                     <label for="revenu">Revenu :</label>
                                 </div>
                                 <div class="col">
-                                    <select name="revenu" id="revenu" class="custom-select border">
-                                        <option value="1">jusqu’à 9 964 €</option>
-                                        <option value="2">de 9 964 à 27 519 €</option>
-                                        <option value="3">de 27 519 à 73 779 €</option>
-                                        <option value="3">de 73 779 € à 156 244 €</option>
-                                        <option value="3">Au-delà de 156 244 €</option>
-
-                                    </select>
+                                    <input type="number" name="revenu" id="revenu" class="custom-select border">
                                 </div>
                             </div>
                             <div class="row">
