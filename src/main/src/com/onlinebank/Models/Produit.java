@@ -3,6 +3,7 @@ package com.onlinebank.Models;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.Timestamp;
 
 public class Produit extends BaseModelORM {
     @NotBlank
@@ -75,11 +76,11 @@ public class Produit extends BaseModelORM {
 
     @NotBlank
     @NotNull
-    private String created_at;
+    private Timestamp created_at;
 
     @NotBlank
     @NotNull
-    private String updated_at;
+    private Timestamp updated_at;
 
 
     @NotBlank
@@ -235,20 +236,20 @@ public class Produit extends BaseModelORM {
         return this;
     }
 
-    public String getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public Produit setCreated_at(String created_at) {
+    public Produit setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
         return this;
     }
 
-    public String getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public Produit setUpdated_at(String updated_at) {
+    public Produit setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
         return this;
     }
