@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.onlinebank.Models.Prospect" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
 <body class="body-dashboard">
@@ -29,7 +31,7 @@
                     <li class="nav-item menu-cote">
                         <a class="nav-link active" href="#1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-                            <br/> Clients<span class="sr-only">(actuel)</span>
+                            <br/> Mes clients<span class="sr-only">(actuel)</span>
                         </a>
                     </li>
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -53,15 +55,33 @@
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Age</th>
-                        <th>Situation familial</th>
-                        <th>Situation profesionnelle</th>
-                        <th>Situation de logement</th>
-                        <th>Publicité</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                        <th>Produit 1</th>
+                        <th>Produit 2</th>
+                        <th>Produit 3</th>
                         <th>Ses produits</th>
                         <th>En savoir plus</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <% List<Prospect> c = (List<Prospect>) request.getAttribute("user");
+                        for (Prospect result: c)
+                        {
+                            %><tr><%
+                            %><td><% out.print(result.getNom()); %></td><%
+                            %><td><% out.print(result.getPrenom()); %></td><%
+                            %><td><% out.print(request.getAttribute(result.getId()+"email")) %></td><%
+                            %><td><% result.getTelephone(); %></td><%
+                            %><td><% if (request.getAttribute(result.getId()+"produit"+1) != null)
+                    { out.print(request.getAttribute(result.getId()+"produit"+1)); } %></td><%
+                            %><td><% if (request.getAttribute(result.getId()+"produit"+2) != null)
+                    { out.print(request.getAttribute(result.getId()+"produit"+2)); } %></td><%
+                            %><td><% if (request.getAttribute(result.getId()+"produit"+3) != null)
+                    { out.print(request.getAttribute(result.getId()+"produit"+3)); } %></td><%
+                            %></tr><%
+                        }
+                    %>
                     <tr>
                         <td>1,001</td>
                         <td>Lorem</td>
@@ -69,141 +89,6 @@
                         <td>dolor</td>
                         <td>sit</td>
                         <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                        En savoir plus
-                    </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
                         <td>ipsum</td>
                         <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
                             Ses produits
@@ -214,6 +99,9 @@
                     </tr>
 
                     </tbody>
+
+
+
                 </table>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-end" id="2">
@@ -233,6 +121,44 @@
                         </li>
                     </ul>
                 </nav>
+
+
+
+                <div class="table-responsive" id="1">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Age</th>
+                            <th>Email</th>
+                            <th>Produit 1</th>
+                            <th>Produit 2</th>
+                            <th>Produit 3</th>
+                            <th>Ses produits</th>
+                            <th>En savoir plus</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1,001</td>
+                            <td>Lorem</td>
+                            <td>ipsum</td>
+                            <td>dolor</td>
+                            <td>sit</td>
+                            <td>Lorem</td>
+                            <td>ipsum</td>
+                            <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
+                                Ses produits
+                            </button></td>
+                            <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
+                                En savoir plus
+                            </button></td>
+                        </tr>
+
+                        </tbody>
+
+
             </div>
             <div class="row">
                 <div class="col-md-4">
