@@ -29,11 +29,6 @@ public class ServletProposition extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //ArrayList<String> errors = new ArrayList<String>();
-//        Compte compte = new Compte();
-        //      ArrayList filterCompte = new ArrayList();
-        //    filterCompte.add(Filter.add("=","id_prospect","26"));
-        //  Database.select()
 
         ArrayList<String> fields = new ArrayList<String>();
         fields.add("*");
@@ -41,40 +36,19 @@ public class ServletProposition extends HttpServlet {
         List<Prospect> listprospect = Database.select(client,fields);
         Utils utils = new Utils();
 
-/*        ArrayList<String> prod = new ArrayList<String>();
-        prod.add("*");
-        Produit produit = new Produit();
-        List<Produit> produitList = Database.select(produit,prod);
-        Produit Produit = new Produit();
-        System.out.println(produit);*/
-
+      /*  ArrayList<String> produit = new ArrayList<String>();
+        produit.add("*");
+        Produit produi = new Produit();
+        List<Produit> i = Database.select(produi,produit);
+            for (Produit result: i)
+            {
+                System.out.println("test" + result.getNom());
+            }
+*/
 
         for(Prospect c:listprospect)
         {
             Integer age = utils.findAge(c.getAge());
-//            System.out.println(age);
-//            String situationprofessionnel = c.getSituationprofessionnel();
-//            System.out.println(situationprofessionnel);
-     /*       boolean VerifLj = c.getVerifLj();
-            System.out.println(VerifLj);
-            boolean VerifCcp = c.getVerifCcp();
-            System.out.println(VerifCcp);
-            boolean VerifLa = c.getVerifLa();
-            System.out.println(VerifLa);
-            boolean VerifPel = c.getVerifPel();
-            System.out.println(VerifPel);
-            boolean VerifAv = c.getVerifAv();
-            System.out.println(VerifAv);
-            boolean VerifCc = c.getVerifCc();
-            System.out.println(VerifCc);
-            boolean VerifCi = c.getVerifCi();
-            System.out.println(VerifCi);
-            boolean VerifCa = c.getVerifCa();
-            System.out.println(VerifCa);
-            boolean VerifCe = c.getVerifCe();
-            System.out.println(VerifCe);
-            int c.getRevenu() = c.getRevenu();
-            System.out.println(c.getRevenu());*/
 
             // CONDITION POUR LES 12/17
             if (age >= 12 && age <= 17) {
