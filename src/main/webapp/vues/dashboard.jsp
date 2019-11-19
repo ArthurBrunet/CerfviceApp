@@ -67,6 +67,9 @@
                     <%
                         List<Prospect> i = (List<Prospect>) request.getAttribute("user");
                         for (Prospect result: i){
+                            Integer idresult = 0;
+                            idresult = result.getId();
+                            System.out.println("client" + idresult);
                             %><tr>
                                 <td><% out.print(result.getNom()); %></td>
                                 <td><% out.print(result.getPrenom()); %></td>
@@ -75,23 +78,29 @@
                                 <td><% out.print(result.getSituationprofessionnel()); %></td>
                                 <td><% out.print(result.getSituationlogement()); %></td>
                                 <td><% out.print(result.getBloquepub()); %></td>
-                                <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                                    Ses produits
-                                </button></td>
-                                <td><!-- Trigger/Open The Modal -->
-                                    <button type="button" id="myBtn" class="btn btn-secondary">En savoir plus</button>
-
-                                    <!-- The Modal -->
-                                    <div id="myModal" class="modal">
-
-                                        <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close">&times;</span>
-                                            <p>Some text in the Modal..</p>
-                                        </div>
-
-                                    </div></td>
+                                <td><button type="button" class="btn btn-secondary">Ses produits</button></td>
+                                <td><button type="button" id="myBtn" class="btn btn-secondary">En savoir plus</button></td>
                             </tr>
+                    <div id="MyModal" class="<% out.print("client" + idresult); %>" style="display=block;">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p class="content-savoirplus">Nom: <b><% out.print(result.getNom()); %></b></br>
+                                Prénom: <b><% out.print(result.getPrenom()); %></b></br>
+                                Situation familiale: <b><% out.print(result.getSituationfamiliale()); %></b></br>
+                                Revenu: <b><% out.print(result.getRevenu()); %></b></br>
+                                Dépenses réguilière: <b><% out.print(result.getDepensereguliere()); %></b></br>
+                                Situation professionnelle: <b><% out.print(result.getSituationprofessionnel()); %></b></br>
+                                Téléphone: <b><% out.print(result.getTelephone()); %></b></br>
+                                Enfants: <b><% out.print(result.getEnfants()); %></b></br>
+                                Département: <b><% out.print(result.getDepartement()); %></b></br>
+                                Type habitat: <b><% out.print(result.getTypehabitat()); %></b></br>
+                                Situation logement: <b><% out.print(result.getSituationlogement()); %></b></br>
+                                Ancienneté logement: <b><% out.print(result.getAnciennetelogement()); %></b></br>
+                                Ancienneté professionnelle: <b><% out.print(result.getAncienneteprofessionnel()); %></b></br>
+                                Bloque pub: <b><% out.print(result.getBloquepub()); %></b></br>
+                            </p>
+                        </div>
+                    </div>
                        <% } %>
                     </tbody>
                 </table>
@@ -347,7 +356,7 @@
 </script>-->
 <script>
     // Get the modal
-    var modal = document.getElementById("myModal");
+    var modal = document.getElementById("MyModal");
 
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");

@@ -355,9 +355,7 @@ width:60%;
 }
 
 /* Modals */
-
-/* The Modal (background) */
-.modal {
+#MyModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -377,13 +375,13 @@ width:60%;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
 }
 
 /* The Close Button */
 .close {
     color: #aaaaaa;
-    float: right;
+    float: left;
     font-size: 28px;
     font-weight: bold;
 }
@@ -393,4 +391,8 @@ width:60%;
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.content-savoirplus{
+    text-align: center;
 }
