@@ -43,7 +43,7 @@ public class Produit extends BaseModelORM {
 
     @NotBlank
     @NotNull
-    private Integer revenumac;
+    private Integer revenumax;
 
     @NotBlank
     @NotNull
@@ -166,12 +166,12 @@ public class Produit extends BaseModelORM {
         return this;
     }
 
-    public Integer getRevenumac() {
-        return revenumac;
+    public Integer getRevenuMax() {
+        return revenumax;
     }
 
-    public Produit setRevenumac(Integer revenumac) {
-        this.revenumac = revenumac;
+    public Produit setRevenumax(Integer revenumax) {
+        this.revenumax = revenumax;
         return this;
     }
 
