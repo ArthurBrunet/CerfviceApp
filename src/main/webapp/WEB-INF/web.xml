@@ -1,12 +1,12 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-<!--definition des servelets-->
+  <!--definition des servelets-->
   <servlet>
     <servlet-name>home</servlet-name>
     <servlet-class>com.onlinebank.Servlet.ServletAccueil</servlet-class>
@@ -20,6 +20,10 @@
     <servlet-class>com.onlinebank.Servlet.ServletLogin</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>ServletProposition</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletProposition</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ServletDeconnexion</servlet-name>
     <servlet-class>com.onlinebank.Servlet.ServletDeconnexion</servlet-class>
   </servlet>
@@ -27,8 +31,11 @@
     <servlet-name>ServletDashboard</servlet-name>
     <servlet-class>com.onlinebank.Servlet.ServletDashboard</servlet-class>
   </servlet>
-
-<!--mapping-->
+  <servlet>
+    <servlet-name>ServletProduct</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletProduct</servlet-class>
+  </servlet>
+  <!--mapping-->
   <servlet-mapping>
     <servlet-name>home</servlet-name>
     <url-pattern>/accueil</url-pattern>
@@ -46,10 +53,18 @@
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>ServletProposition</servlet-name>
+    <url-pattern>/produits</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>ServletDashboard</servlet-name>
     <url-pattern>/dashboard</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+    <servlet-name>ServletProduct</servlet-name>
+    <url-pattern>/product</url-pattern>
+  </servlet-mapping>
+
   <welcome-file-list>
     <welcome-file>login</welcome-file>
   </welcome-file-list>

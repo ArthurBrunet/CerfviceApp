@@ -1,106 +1,37 @@
 package com.onlinebank.Models;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 
-public class Produit extends BaseModelORM {
-    @NotBlank
-    @NotNull
+public class Produit extends BaseModelORM{
+    String tableName= "ob_produit";
+
     private Integer id;
-
-    String tableName = "ob_produit";
-
-    @NotBlank
-    @NotNull
-    @Size(min = 3,max = 50)
     private String nom;
-
-    @NotBlank
-    @NotNull
-    @Size(min = 3,max = 500)
     private String description;
-
-    @NotBlank
-    @NotNull
     private Integer minage;
-
-    @NotBlank
-    @NotNull
     private Integer maxage;
-
-    @NotBlank
-    @NotNull
-    private String situationfamiliale;
-
-    @NotBlank
-    @NotNull
-    private String situationprofessionnel;
-
-    @NotBlank
-    @NotNull
     private Integer revenumin;
-
-    @NotBlank
-    @NotNull
     private Integer revenumax;
-
-    @NotBlank
-    @NotNull
-    private String depenseregulieremax;
-
-    @NotBlank
-    @NotNull
-    private Integer enfants;
-
-    @NotBlank
-    @NotNull
-    private String situationlogement;
-
-    @NotBlank
-    @NotNull
-    private Integer minanciennetelogement;
-
-    @NotBlank
-    @NotNull
-    private Integer maxanciennetelogement;
-
-    @NotBlank
-    @NotNull
-    private Integer minancienneteprofessionnel;
-
-    @NotBlank
-    @NotNull
-    private Integer maxancienneteprofessionnel;
-
-    @NotBlank
-    @NotNull
+    private String situationprofessionnel;
     private Timestamp created_at;
-
-    @NotBlank
-    @NotNull
     private Timestamp updated_at;
 
+    @Override
+    public String getTableName() {
+        return tableName;
+    }
 
-    @NotBlank
-    @NotNull
     @Override
     public Integer getId() {
         return id;
     }
 
-    @NotBlank
-    @NotNull
     @Override
     public Produit setId(Integer id) {
         this.id = id;
         return this;
     }
 
-    public String getTablename() {
-        return tableName;
-    }
     public String getNom() {
         return nom;
     }
@@ -137,24 +68,6 @@ public class Produit extends BaseModelORM {
         return this;
     }
 
-    public String getSituationfamiliale() {
-        return situationfamiliale;
-    }
-
-    public Produit setSituationfamiliale(String situationfamiliale) {
-        this.situationfamiliale = situationfamiliale;
-        return this;
-    }
-
-    public String getSituationprofessionnel() {
-        return situationprofessionnel;
-    }
-
-    public Produit setSituationprofessionnel(String situationprofessionnel) {
-        this.situationprofessionnel = situationprofessionnel;
-        return this;
-    }
-
     public Integer getRevenumin() {
         return revenumin;
     }
@@ -164,7 +77,7 @@ public class Produit extends BaseModelORM {
         return this;
     }
 
-    public Integer getRevenuMax() {
+    public Integer getRevenumax() {
         return revenumax;
     }
 
@@ -173,66 +86,12 @@ public class Produit extends BaseModelORM {
         return this;
     }
 
-    public String getDepenseregulieremax() {
-        return depenseregulieremax;
+    public String getSituationprofessionnel() {
+        return situationprofessionnel;
     }
 
-    public Produit setDepenseregulieremax(String depenseregulieremax) {
-        this.depenseregulieremax = depenseregulieremax;
-        return this;
-    }
-
-    public Integer getEnfants() {
-        return enfants;
-    }
-
-    public Produit setEnfants(Integer enfants) {
-        this.enfants = enfants;
-        return this;
-    }
-
-    public String getSituationlogement() {
-        return situationlogement;
-    }
-
-    public Produit setSituationlogement(String situationlogement) {
-        this.situationlogement = situationlogement;
-        return this;
-    }
-
-    public Integer getMinanciennetelogement() {
-        return minanciennetelogement;
-    }
-
-    public Produit setMinanciennetelogement(Integer minanciennetelogement) {
-        this.minanciennetelogement = minanciennetelogement;
-        return this;
-    }
-
-    public Integer getMaxanciennetelogement() {
-        return maxanciennetelogement;
-    }
-
-    public Produit setMaxanciennetelogement(Integer maxanciennetelogement) {
-        this.maxanciennetelogement = maxanciennetelogement;
-        return this;
-    }
-
-    public Integer getMinancienneteprofessionnel() {
-        return minancienneteprofessionnel;
-    }
-
-    public Produit setMinancienneteprofessionnel(Integer minancienneteprofessionnel) {
-        this.minancienneteprofessionnel = minancienneteprofessionnel;
-        return this;
-    }
-
-    public Integer getMaxancienneteprofessionnel() {
-        return maxancienneteprofessionnel;
-    }
-
-    public Produit setMaxancienneteprofessionnel(Integer maxancienneteprofessionnel) {
-        this.maxancienneteprofessionnel = maxancienneteprofessionnel;
+    public Produit setSituationprofessionnel(String situationprofessionnel) {
+        this.situationprofessionnel = situationprofessionnel;
         return this;
     }
 
