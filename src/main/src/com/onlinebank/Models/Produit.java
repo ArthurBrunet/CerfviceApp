@@ -81,9 +81,6 @@ public class Produit extends BaseModelORM {
     @NotNull
     private String updated_at;
 
-    @NotBlank
-    @NotNull
-    private Integer id_historique;
 
     @NotBlank
     @NotNull
@@ -253,15 +250,6 @@ public class Produit extends BaseModelORM {
 
     public Produit setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
-        return this;
-    }
-
-    public Integer getId_historique() {
-        return id_historique;
-    }
-
-    public Produit setId_historique(Integer id_historique) {
-        this.id_historique = id_historique;
         return this;
     }
 }
