@@ -71,6 +71,7 @@ public class ServletAccueil extends HttpServlet {
                     System.out.println("["+tableauGlobal.indexOf(p)+"]"+"["+p.indexOf(p.get(i))+"] ="+ p.get(i));
                 }
             }
+            request.setAttribute("TableauGlobal",tableauGlobal);
             this.getServletContext().getRequestDispatcher(url).forward(request, response);
         }else{
             response.sendRedirect(request.getContextPath()+"/login");
