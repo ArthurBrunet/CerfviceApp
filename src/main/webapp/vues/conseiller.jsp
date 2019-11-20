@@ -71,14 +71,15 @@
                             %><tr><%
                             %><td><% out.print(result.getNom()); %></td><%
                             %><td><% out.print(result.getPrenom()); %></td><%
-                            %><td><% out.print(request.getAttribute(result.getId()+"email")) %></td><%
-                            %><td><% result.getTelephone(); %></td><%
+                            %><td><% out.print(request.getAttribute(result.getId()+"email")); %></td><%
+                            %><td><% out.print(result.getTelephone()); %></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+1) != null)
-                    { out.print(request.getAttribute(result.getId()+"produit"+1)); } %></td><%
+                    { out.print(request.getAttribute(result.getId()+"produit"+1)); }else{ out.print("Pas de produit"); }%></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+2) != null)
-                    { out.print(request.getAttribute(result.getId()+"produit"+2)); } %></td><%
+                    { out.print(request.getAttribute(result.getId()+"produit"+2)); }else{ out.print("Pas de produit"); }%></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+3) != null)
-                    { out.print(request.getAttribute(result.getId()+"produit"+3)); } %></td><%
+                    { out.print(request.getAttribute(result.getId()+"produit"+3)); }else{ out.print("Pas de produit"); }%></td><%
+                            %><td><a href=""></a></td><%
                             %></tr><%
                         }
                     %>
