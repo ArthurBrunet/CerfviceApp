@@ -100,7 +100,7 @@ public class Produit extends BaseModelORM {
         return this;
     }
 
-    public String getTablename() {
+    public String getTableName() {
         return tableName;
     }
     public String getNom() {

@@ -47,6 +47,8 @@ public class ServletConseiller extends HttpServlet {
             filtres.add(Filter.add("=","bloquepub",false));
             List<Prospect> i = Database.select(prospect,field,filtres);
 
+            request.setAttribute("user",i);
+
 
             for (Prospect resultProspect: i)
             {
@@ -54,8 +56,8 @@ public class ServletConseiller extends HttpServlet {
                 ArrayList<String> field2 = new ArrayList<String>();
                 ArrayList filtres2 = new ArrayList();
                 Compte user = new Compte();
-                field.add("email");
-                filtres.add(Filter.add("=","id_prospect",resultProspect.getId()));
+                field2.add("email");
+                filtres2.add(Filter.add("=","id_prospect",resultProspect.getId()));
                 List<Compte> c = Database.select(user,field2,filtres2);
 
 
@@ -76,9 +78,9 @@ public class ServletConseiller extends HttpServlet {
                 for (ProspectProduit pp :listprospectproduit) {
                     int idproduit = pp.getId_produit();
                     Produit produit = new Produit();
-                    ArrayList filter = new ArrayList();
-                    filter.add(Filter.add("=","id",idproduit));
-                    List<Produit> listProduit = Database.select(produit,fields,filter);
+                    ArrayList filter4 = new ArrayList();
+                    filter4.add(Filter.add("=","id",idproduit));
+                    List<Produit> listProduit = Database.select(produit,fields,filter4);
                     int count = 0;
                     for (Produit d: listProduit)
                     {

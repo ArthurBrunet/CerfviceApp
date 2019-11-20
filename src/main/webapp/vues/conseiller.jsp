@@ -71,6 +71,7 @@
                             %><tr><%
                             %><td><% out.print(result.getNom()); %></td><%
                             %><td><% out.print(result.getPrenom()); %></td><%
+                            %><td><% out.print(result.getAge()); %></td><%
                             %><td><% out.print(request.getAttribute(result.getId()+"email")); %></td><%
                             %><td><% out.print(result.getTelephone()); %></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+1) != null)
@@ -79,26 +80,10 @@
                     { out.print(request.getAttribute(result.getId()+"produit"+2)); }else{ out.print("Pas de produit"); }%></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+3) != null)
                     { out.print(request.getAttribute(result.getId()+"produit"+3)); }else{ out.print("Pas de produit"); }%></td><%
-                            %><td><a href=""></a></td><%
+                            %><td><a href="<% out.print(request.getContextPath());%>/ajout?id=<% out.print(result.getId()); %>">Ajout de produit</a></td><%
                             %></tr><%
                         }
                     %>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-
                     </tbody>
 
 
