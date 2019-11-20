@@ -16,23 +16,24 @@
         <!-- Login Form -->
         <form action="" method="post">
             <%
-                if (request.getAttribute("error") != null){
-                    ArrayList error = (ArrayList) request.getAttribute("error");
-            %>
-            <h2>
+            if (request.getAttribute("error") != null){
+                ArrayList error = (ArrayList) request.getAttribute("error");
+                %>
+            <h2 class="error-champs">
                 <%out.print(error.get(0));%>
             </h2>
             <%
                 }
             %>
+          
             <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email">
-            <input type="text" id="password" class="fadeIn third" name="motdepasse" placeholder="Mot de passe">
-            <input type="submit" class="fadeIn fourth" value="Se connecter">
+            <input type="password" id="password" class="fadeIn third" name="motdepasse" placeholder="Mot de passe">
+            <button type="submit" class="fadeIn fourth btn btn-secondary modifier">Se connecter</button>
         </form>
 
         <!-- Remind Passowrd -->
         <div id="formFooter">
-            <a class="underlineHover" href="#">Mot de passe oublié ?</a>
+            <a class="underlineHover" href="<% out.print(request.getContextPath());%>/register">Inscription</a>
         </div>
 
     </div>
