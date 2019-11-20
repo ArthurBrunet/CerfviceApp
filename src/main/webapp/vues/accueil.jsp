@@ -9,10 +9,11 @@
 <%@ include file="header.jsp"%>
 
     <nav class="navbar navbar-inverse">
-        <form class="container-fluid" action="http://localhost:8080/OnlineBank_war_exploded/logout">
+        <form class="container-fluid" action="http://localhost:8080/OnlineBank_war_exploded/logout" style="margin-bottom: auto">
             <a class="navbar-brand" href="accueil">
                 <img class="" src="assets/img/logo_bank_gold_biseau_noir.png">
             </a>
+            <a class="navbar-brand" href="accueil" style="color:#d9b01c; font-size: 50px;">ONLINE BANK</a>
             <button type="submit" class="btn btn-secondary prap" href="logout">Déconnexion</button>
         </form>
     </nav>
@@ -40,7 +41,9 @@
                                 <div class="row">
                                     <div class="col">
                                         ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
-                                        <button type="button" class="btn btn-secondary prap">Contactez-nous</button>
+                                        <a href="contact">
+                                            <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +53,9 @@
                                 <div class="row">
                                     <div class="col">
                                         ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
-                                        <button type="button" class="btn btn-secondary">Contactez-nous</button>
+                                        <a href="contact">
+                                            <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +65,9 @@
                                 <div class="row">
                                     <div class="col ">
                                         ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
+                                        <a href="contact">
                                         <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

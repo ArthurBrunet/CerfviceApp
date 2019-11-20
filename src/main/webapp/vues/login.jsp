@@ -4,6 +4,14 @@
 <%  if (session.getAttribute("role") == null)
 { %>
 
+<nav class="navbar navbar-inverse">
+    <form class="container-fluid" action="http://localhost:8080/OnlineBank_war_exploded/logout" style="margin-bottom: auto">
+        <a class="navbar-brand" href="accueil">
+            <img class="" src="assets/img/logo_bank_gold_biseau_noir.png">
+        </a>
+    </form>
+</nav>
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
