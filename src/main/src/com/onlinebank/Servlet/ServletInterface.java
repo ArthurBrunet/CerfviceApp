@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "ServletAjoutProduit")
-public class ServletAjoutProduit extends HttpServlet{
-    private static String url = "/vues/ajoutConseiller.jsp";
+@WebServlet(name = "ServletInterface")
+public class ServletInterface extends HttpServlet{
+    private static String url = "/vues/interfaceConseiller.jsp";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();

@@ -80,7 +80,7 @@
                     { out.print(request.getAttribute(result.getId()+"produit"+2)); }else{ out.print("Pas de produit"); }%></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+3) != null)
                     { out.print(request.getAttribute(result.getId()+"produit"+3)); }else{ out.print("Pas de produit"); }%></td><%
-                            %><td><a href="<% out.print(request.getContextPath());%>/ajout?id=<% out.print(result.getId()); %>">Ajout de produit</a></td><%
+                            %><td><a href="<% out.print(request.getContextPath());%>/interface?id=<% out.print(result.getId()); %>">Contacter</a></td><%
                             %></tr><%
                         }
                     %>
