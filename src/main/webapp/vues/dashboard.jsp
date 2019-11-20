@@ -1,3 +1,5 @@
+<%@ page import="com.onlinebank.Models.Prospect" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
 <body class="body-dashboard">
@@ -19,7 +21,7 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link menu-cote" href="#">
+                        <a class="nav-link menu-cote" href="<% out.print(request.getContextPath());%>/register">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                             <br/>Home OnlineBank
                         </a>
@@ -62,159 +64,47 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                        En savoir plus
-                    </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                        <td>1,001</td>
-                        <td>ipsum</td>
-                        <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                            Ses produits
-                        </button></td>
-                        <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                            En savoir plus
-                        </button></td>
-                    </tr>
-
+                    <%
+                        List<Prospect> i = (List<Prospect>) request.getAttribute("user");
+                        for (Prospect result: i){
+                            Integer idresult = 0;
+                            idresult = result.getId();
+                            System.out.println("client" + idresult);
+                            %><tr>
+                                <td><% out.print(result.getNom()); %></td>
+                                <td><% out.print(result.getPrenom()); %></td>
+                                <td><% out.print(result.getAge()); %></td>
+                                <td><% out.print(result.getSituationfamiliale()); %></td>
+                                <td><% out.print(result.getSituationprofessionnel()); %></td>
+                                <td><% out.print(result.getSituationlogement()); %></td>
+                                <td><% out.print(result.getBloquepub()); %></td>
+                                <td><button type="button" class="btn btn-secondary">Ses produits</button></td>
+                                <td><button type="button" id="myBtn" class="btn btn-secondary">En savoir plus</button></td>
+                            </tr>
+                    <div id="MyModal" class="<% out.print("client" + idresult); %>" style="display=block;">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p class="content-savoirplus">Nom: <b><% out.print(result.getNom()); %></b></br>
+                                Prénom: <b><% out.print(result.getPrenom()); %></b></br>
+                                Situation familiale: <b><% out.print(result.getSituationfamiliale()); %></b></br>
+                                Revenu: <b><% out.print(result.getRevenu()); %></b></br>
+                                Dépenses réguilière: <b><% out.print(result.getDepensereguliere()); %></b></br>
+                                Situation professionnelle: <b><% out.print(result.getSituationprofessionnel()); %></b></br>
+                                Téléphone: <b><% out.print(result.getTelephone()); %></b></br>
+                                Enfants: <b><% out.print(result.getEnfants()); %></b></br>
+                                Département: <b><% out.print(result.getDepartement()); %></b></br>
+                                Type habitat: <b><% out.print(result.getTypehabitat()); %></b></br>
+                                Situation logement: <b><% out.print(result.getSituationlogement()); %></b></br>
+                                Ancienneté logement: <b><% out.print(result.getAnciennetelogement()); %></b></br>
+                                Ancienneté professionnelle: <b><% out.print(result.getAncienneteprofessionnel()); %></b></br>
+                                Bloque pub: <b><% out.print(result.getBloquepub()); %></b></br>
+                            </p>
+                        </div>
+                    </div>
+                       <% } %>
                     </tbody>
                 </table>
+
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-end" id="2">
                         <li class="page-item disabled">
@@ -313,6 +203,8 @@
         </nav>
     </div>
 </div>
+
+<!--
 <script>
         src="https://code.jquery.com/jquery-3.4.1.min.js"
 </script>
@@ -330,7 +222,7 @@
         })
 
         swalWithBootstrapButtons.fire({
-            titleText: 'Amandine Pertout',
+            titleText: 'Informations client',
             html: 'Age: <b>23</b> </br> Situation familiale: <b>Veuf</b>' +
                 ' </br> Revenu: <b>1700€</b> </br> Dépenses régulières: <b>2300€</b> </br> Situation professionnelle: <b>Chômage</b>' +
                 ' </br> Téléphone: <b>02.54.38.89.27</b> </br> Enfants: <b>2</b> </br> Département : <b>Seine-Maritime</b>' +
@@ -460,6 +352,33 @@
         }
 
     })()
+    }
+</script>-->
+<script>
+    // Get the modal
+    var modal = document.getElementById("MyModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 </script>
 </body>

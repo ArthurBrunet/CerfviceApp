@@ -37,11 +37,13 @@ public class Login {
 
                             String email = result.getEmail();
                             String role = result.getRole();
+                            Integer id = result.getId_prospect();
                             HttpSession session = request.getSession();
 
 //                          AJOUT ATTRIBUT DANS LA SESSION
                             session.setAttribute("email", email);
                             session.setAttribute("role",role);
+                            session.setAttribute("idprospect",id);
 
                             errors.add(role);
 
