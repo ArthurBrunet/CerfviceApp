@@ -6,7 +6,7 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContentte">
-        <form action="register" method="POST" accept-charset="ISO-8859-1">
+        <form action="" method="POST" accept-charset="ISO-8859-1">
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -128,6 +128,7 @@
                                 </div>
                                 <div class="col">
                                     <input type="number" name="revenu" id="revenu" value="<%= result.getRevenu() %>" class="custom-select border">
+                                    <input type="hidden" name="id" id="id" value="<%= result.getId() %>" class="custom-select border">
                                 </div>
                             </div>
                             <div class="row">
@@ -219,39 +220,39 @@
                         <hr class="gold">
                         <div class="row">
                             <div class="col"><label for="verifLj">Possession d'un livret jeune ?</label></div>
-                            <input type="checkbox" name="verifLj" id="verifLj" class="col" <%if (result.getAnciennetelogement() = )%>>
+                            <input type="checkbox" name="verifLj" id="verifLj" class="col" <%if (result.getVerifLj() == true){%>checked<%}%>>
                         </div>
                         <div class="row">
                             <div class="col"><label for="verifCcp">Possession d'un compte courant ?</label></div>
-                            <input type="checkbox" name="verifCcp" id="verifCcp" class="col">
+                            <input type="checkbox" name="verifCcp" id="verifCcp" class="col" <%if (result.getVerifCcp() == true){%>checked<%}%>>
                         </div>
                         <div class="row">
                             <div class="col"><label for="verifLa">Possession d'un livret A ?</label></div>
-                            <input type="checkbox" name="verifLa" id="verifLa" class="col">
+                            <input type="checkbox" name="verifLa" id="verifLa" class="col" <%if (result.getVerifLa() == true){%>checked<%}%>>
                         </div>
                         <div class="row">
                             <div class="col"><label for="verifPel">Possession d'un plan d'épargne logement ?</label></div>
-                            <input type="checkbox" name="verifPel" id="verifPel" class="col">
+                            <input type="checkbox" name="verifPel" id="verifPel" class="col" <%if (result.getVerifPel() == true){%>checked<%}%>>
                         </div>
                         <div class="row">
                             <div class="col"><label for="verifAv">Possession d'une assurance vie ?</label></div>
-                            <input type="checkbox" name="verifAv" id="verifAv" class="col">
+                            <input type="checkbox" name="verifAv" id="verifAv" class="col" <%if (result.getVerifAv() == true){%>checked<%}%>>
                         </div>
                         <div class="row">
                             <div class="col"><label for="verifCe">Possession d'un crédit etudiant ?</label></div>
-                            <input type="checkbox" name="verifCe" id="verifCe" class="col">
+                            <input type="checkbox" name="verifCe" id="verifCe" class="col" <%if (result.getVerifCe() == true){%>checked<%}%>>
                         </div>
                         <div class="row">
                             <div class="col"><label for="verifCc">Possession d'un crédit consommation ?</label></div>
-                            <input type="checkbox" name="verifCc" id="verifCc" class="col">
+                            <input type="checkbox" name="verifCc" id="verifCc" class="col" <%if (result.getVerifCc() == true){%>checked<%}%>>
                         </div>
                         <div class="row">
                             <div class="col"><label for="verifCi">Possession d'un crédit immobilier ?</label></div>
-                            <input type="checkbox" name="verifCi" id="verifCi" class="col">
+                            <input type="checkbox" name="verifCi" id="verifCi" class="col" <%if (result.getVerifCi() == true){%>checked<%}%>>
                         </div>
                         <div class="row">
                             <div class="col"><label for="verifCa">Possession d'un crédit automobile ?</label></div>
-                            <input type="checkbox" name="verifCa" id="verifCa" class="col">
+                            <input type="checkbox" name="verifCa" id="verifCa" class="col" <%if (result.getVerifCa() == true){%>checked<%}%>>
                         </div>
 
                     </div>
@@ -266,10 +267,15 @@
 
                 <div class="centerBTN">
                     <button type="submit" class="button btn-primary btn btn-secondary">Valider</button>
+
+
                 </div>
             </div>
 
         </form>
+        <a href="interface?id=<%=request.getParameter("id")%>">
+            <button class="button btn-primary btn btn-secondary">Retour</button>
+        </a>
     </div>
 </div>
 <%@ include file="footer.jsp"%>
