@@ -52,7 +52,7 @@ Les coûts pour l'entreprise Cerfvice sont de l'ordre de **34320€**, comprenan
 
 ## Chiffre d'affaire
 
-Le chiffre d'affaire de l'entreprise Cerfvice est de **34320€** pour la totalité du projet encouru du 11 Octobre jusqu'au 22 Novembre soit 33 jours de journée de travail effectué par l'entreprise, moins 11 jours de formation utile au bon fonctionnement de l'application. Soit 22 jours ouvrés de bon développement.
+Le chiffre d'affaire de l'entreprise Cerfvice est de **51480€** pour la totalité du projet encouru du 11 Octobre jusqu'au 22 Novembre soit 33 jours de journée de travail effectué par l'entreprise, moins 11 jours de formation utile au bon fonctionnement de l'application. Soit 22 jours ouvrés de bon développement.
 
 ## Marge
 
