@@ -32,6 +32,22 @@
     <servlet-class>com.onlinebank.Servlet.ServletDashboard</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>ServletConseiller</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletConseiller</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletAjoutProduit</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletAjoutProduit</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletInterface</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletInterface</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletUpdateConseiller</servlet-name>
+    <servlet-class>com.onlinebank.Servlet.ServletUpdateConseiller</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ServletProduct</servlet-name>
     <servlet-class>com.onlinebank.Servlet.ServletProduct</servlet-class>
   </servlet>
@@ -60,6 +76,23 @@
     <servlet-name>ServletDashboard</servlet-name>
     <url-pattern>/dashboard</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletConseiller</servlet-name>
+    <url-pattern>/dashboardconseiller</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletAjoutProduit</servlet-name>
+    <url-pattern>/ajout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletInterface</servlet-name>
+    <url-pattern>/interface</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletUpdateConseiller</servlet-name>
+    <url-pattern>/updateconseiller</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>ServletProduct</servlet-name>
     <url-pattern>/product</url-pattern>

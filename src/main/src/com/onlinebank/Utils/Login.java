@@ -67,9 +67,9 @@ public class Login {
             errors.add("/dashboard");
 
         }
-        if (errors.get(0).equals("Conseiller")){
+        if (errors.get(0).equals("conseiller")){
 
-            errors.add("/dashboard");
+            errors.add("/dashboardconseiller");
 
         }
         if (errors.get(0).equals("user")){

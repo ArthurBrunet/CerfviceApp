@@ -32,6 +32,10 @@ public class Produit extends BaseModelORM{
         return this;
     }
 
+    public String getTableName() {
+        return tableName;
+    }
+  
     public String getNom() {
         return nom;
     }
