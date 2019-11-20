@@ -10,7 +10,9 @@
 
     <nav class="navbar navbar-inverse">
         <form class="container-fluid" action="http://localhost:8080/OnlineBank_war_exploded/logout">
-            <img class="" src="assets/img/logo_bank_gold_biseau_noir.png">
+            <a class="navbar-brand" href="accueil">
+                <img class="" src="assets/img/logo_bank_gold_biseau_noir.png">
+            </a>
             <button type="submit" class="btn btn-secondary prap" href="logout">Déconnexion</button>
         </form>
     </nav>
