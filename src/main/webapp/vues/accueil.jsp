@@ -9,10 +9,11 @@
 <%@ include file="header.jsp"%>
 
     <nav class="navbar navbar-inverse">
-        <form class="container-fluid" action="http://localhost:8080/OnlineBank_war_exploded/logout">
+        <form class="container-fluid" action="http://localhost:8080/OnlineBank_war_exploded/logout" style="margin-bottom: auto">
             <a class="navbar-brand" href="accueil">
                 <img class="" src="assets/img/logo_bank_gold_biseau_noir.png">
             </a>
+            <a class="navbar-brand" href="accueil" style="color:#d9b01c; font-size: 50px;">ONLINE BANK</a>
             <button type="submit" class="btn btn-secondary prap" href="logout">Déconnexion</button>
         </form>
     </nav>
@@ -73,6 +74,7 @@
                                     <div class="col ">
                                         <% out.print(algo.get(2)); %><br/>
                                         <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
