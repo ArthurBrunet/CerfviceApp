@@ -1,5 +1,5 @@
 
-# Carnet de bord ! 3.0
+# Carnet de bord ! 4.0
 
 Ceci est le carnet de bord du **Cerfvice** sur le projet de **Online Bank**, chaque avancement, chaque trace sera tenue à jour sur ce document.
 
@@ -36,7 +36,7 @@ https://docs.google.com/document/d/1JWY2oU4gAc930xEnxJSD8PJYpHXdzgj6sjqhP_K6cDs/
 11 : Enjoy
 ## Objectifs
 
-**1.1 L'application web doit permettre de cibler au mieux les clients avec des produits qui correspondent à leurs besoins.**
+**1.1 L'application web doit permettre de cibler au mieux les clients avec des produits qui correspondraient à leurs besoins.**
 
 **1.2 L'application doit être liée à une banque de donnée de chez Online Bank avec des produits associés.**
 
@@ -88,8 +88,8 @@ Il a été convenu lors de la formulation du contrat, l'entreprise OnlineBank à
 |**Ciblage Marketing**|**X**|||**X**||
 |**Dashboard Admin**|||**X**||**X**|
 |**Inscription Client**|||**X**|||
-|**Mise en Production**||||||
-|**Ecriture Spitch**||||||
-|**TEST**||||||
-|**TEST ORAL**||||||
+|**Mise en Production**||**X**|**X**|**X**||
+|**Ecriture Spitch**|||||**X**|
+|**TEST**|**X**|**X**|**X**|**X**||
+|**TEST ORAL**|**X**|**X**|**X**|**X**|**X**|
 |**Formation JAVA**|**X**|**X**|**X**|**X**|**X**|
