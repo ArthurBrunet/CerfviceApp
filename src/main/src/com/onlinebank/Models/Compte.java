@@ -53,11 +53,6 @@ public class Compte extends BaseModelORM{
         this.id_prospect = id_prospect;
         return this;
     }
-    
-    @Override
-    public Integer getId() {
-        return id;
-    }
 
 
     public String getTableName(){ return tableName; }

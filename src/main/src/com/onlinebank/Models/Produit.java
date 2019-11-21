@@ -20,18 +20,7 @@ public class Produit extends BaseModelORM{
     public String getTableName() {
         return tableName;
     }
-
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public Produit setId(Integer id) {
-        this.id = id;
-        return this;
-    }
-
+  
     public String getNom() {
         return nom;
     }

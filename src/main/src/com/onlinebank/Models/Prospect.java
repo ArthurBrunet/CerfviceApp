@@ -187,15 +187,6 @@ public class Prospect extends BaseModelORM{
 
     String tableName = "ob_prospect";
 
-    public Integer getId() {
-        return id;
-    }
-
-    public Prospect setId(Integer id) {
-        this.id = id;
-        return this;
-    }
-
     public String getTableName() {
         return tableName;
     }
