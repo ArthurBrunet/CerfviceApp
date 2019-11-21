@@ -2,6 +2,7 @@ package com.onlinebank.Models;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
 
 public class Historique extends BaseModelORM{
     @NotBlank
@@ -12,7 +13,7 @@ public class Historique extends BaseModelORM{
 
     @NotBlank
     @NotNull
-    private String dateappel;
+    private Timestamp dateappel;
 
     @NotBlank
     @NotNull
@@ -20,11 +21,11 @@ public class Historique extends BaseModelORM{
 
     @NotBlank
     @NotNull
-    private String created_at;
+    private Timestamp created_at;
 
     @NotBlank
     @NotNull
-    private String updated_at;
+    private Timestamp updated_at;
 
     @NotBlank
     @NotNull
@@ -34,15 +35,15 @@ public class Historique extends BaseModelORM{
     @NotNull
     private Integer id_compte;
 
-    public String getTablename() {
+    public String getTableName() {
         return tableName;
     }
 
-    public String getDateappel() {
+    public Timestamp getDateappel() {
         return dateappel;
     }
 
-    public Historique setDateappel(String dateappel) {
+    public Historique setDateappel(Timestamp dateappel) {
         this.dateappel = dateappel;
         return this;
     }
@@ -56,20 +57,20 @@ public class Historique extends BaseModelORM{
         return this;
     }
 
-    public String getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public Historique setCreated_at(String created_at) {
+    public Historique setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
         return this;
     }
 
-    public String getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public Historique setUpdated_at(String updated_at) {
+    public Historique setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
         return this;
     }
