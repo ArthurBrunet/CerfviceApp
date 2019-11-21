@@ -1,5 +1,6 @@
 <%@ page import="com.onlinebank.Models.Prospect" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.onlinebank.Models.Produit" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
 <body class="body-dashboard">
@@ -105,68 +106,23 @@
                 </nav>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <h2>Compte courant</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Livret jeune</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Livret A</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>PEL</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Assurance vie</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Crédit conso</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Crédit immo</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Crédit auto</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Crédit étudiant</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
+                <div class="row">
+                    <%
+                        if (request.getAttribute("TableauProduits") != null){
+                            List<Produit> listeProduits = (List<Produit>) request.getAttribute("TableauProduits");
+                            for (Produit produit: listeProduits){
+                    %>
+                    <div class="col-md-4">
+                        <h2><%out.print(produit.getNom()); %></h2>
+                        <p><% out.print(produit.getDescription());%></p>
+                        <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                            Modifier
+                        </button>
+                    </div>
+                    <%
+                            }
+                        }
+                    %>
                 </div>
             </div>
         </main>
