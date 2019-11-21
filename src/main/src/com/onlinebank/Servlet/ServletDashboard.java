@@ -1,5 +1,6 @@
 package com.onlinebank.Servlet;
 
+import com.onlinebank.Models.Produit;
 import com.onlinebank.Models.Prospect;
 import com.onlinebank.Utils.Database;
 import com.onlinebank.Utils.Filter;
@@ -47,6 +48,18 @@ public class ServletDashboard extends HttpServlet {
             Prospect User = new Prospect();
             List<Prospect> i = Database.select(User,fields,filters);
 
+            /*affichage produit*/
+            Produit produitenbdd = new Produit();
+            ArrayList<String> fieldsProduit = new ArrayList<>();
+            fieldsProduit.add("*");
+            List<Produit> listProduit = Database.select(produitenbdd,fieldsProduit);
+            request.setAttribute("TableauProduits",listProduit);
+            for (Produit p:listProduit){
+                request.setAttribute(p.getNom(),p.getNom());
+                System.out.println("PRODUIT :");
+                System.out.println(p.getNom());
+                System.out.println(p.getDescription());
+            }
             request.setAttribute("user",i);
 
 
