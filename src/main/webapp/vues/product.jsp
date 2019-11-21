@@ -23,7 +23,7 @@
                                     <label for="description">Description</label>
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-controler" placeholder="Déscription" id="description" name="description">
+                                    <input type="text" class="form-controler" placeholder="Description" id="description" name="description">
                                 </div>
                             </div>
                             <div class="row">
@@ -61,6 +61,8 @@
                                         <option value="SANSEMPLOI">SANS EMPLOI</option>
                                         <option value="Interimaire">Intérimaire</option>
                                         <option value="RETRAITE">Retraité</option>
+                                        <option value="ETUDIANT">Etudiant</option>
+
                                     </select>
                                 </div>
                             </div>
