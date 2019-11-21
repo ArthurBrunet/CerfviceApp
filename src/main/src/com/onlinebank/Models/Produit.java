@@ -20,7 +20,7 @@ public class Produit extends BaseModelORM{
     public String getTableName() {
         return tableName;
     }
-  
+
     public String getNom() {
         return nom;
     }
