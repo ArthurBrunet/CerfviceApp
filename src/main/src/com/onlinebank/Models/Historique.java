@@ -17,7 +17,7 @@ public class Historique extends BaseModelORM{
 
     @NotBlank
     @NotNull
-    private String resultat_appel;
+    private Boolean resultat_appel;
 
     @NotBlank
     @NotNull
@@ -48,11 +48,11 @@ public class Historique extends BaseModelORM{
         return this;
     }
 
-    public String getResultat_appel() {
+    public Boolean getResultat_appel() {
         return resultat_appel;
     }
 
-    public Historique setResultat_appel(String resultat_appel) {
+    public Historique setResultat_appel(Boolean resultat_appel) {
         this.resultat_appel = resultat_appel;
         return this;
     }

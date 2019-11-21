@@ -1,5 +1,6 @@
 package com.onlinebank.Servlet;
 
+import com.onlinebank.Models.Historique;
 import com.onlinebank.Models.Produit;
 import com.onlinebank.Models.Prospect;
 import com.onlinebank.Models.ProspectProduit;
@@ -36,6 +37,7 @@ public class ServletAjoutProduit extends HttpServlet{
             Timestamp date = new Timestamp(System.currentTimeMillis());
 
             Produit produitenbdd = new Produit();
+            Historique historique = new Historique();
             ArrayList<String> fields = new ArrayList<>();
             fields.add("*");
             ArrayList filtre3 = new ArrayList();
@@ -50,6 +52,15 @@ public class ServletAjoutProduit extends HttpServlet{
                         .setId_prospect(idprospect);
 
                 Database.insert(jointure);
+                historique
+                        .setCreated_at(date)
+                        .setResultat_appel(true)
+                        .setUpdated_at(date)
+                        .setDateappel(date)
+                        .setId_produit(nomproduit.getId())
+                        .setId_compte((Integer) session.getAttribute("idcompte"));
+
+                Database.insert(historique);
             }
             response.sendRedirect(request.getContextPath()+"/dashboardconseiller");
         }else if (session.getAttribute("role").equals("user")){
