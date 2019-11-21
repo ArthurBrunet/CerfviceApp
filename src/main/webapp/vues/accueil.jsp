@@ -47,7 +47,7 @@
                                 <div class="row">
                                     <div class="col ">
                                         <% out.print(algo.get(0)); %><br/>
-                                        <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                        <a href="contact?nom=<%=algo.get(0)%>"><button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                 <div class="row">
                                     <div class="col ">
                                         <% out.print(algo.get(1)); %><br/>
-                                        <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                        <a href="contact?nom=<%=algo.get(1)%>"><button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                 <div class="row">
                                     <div class="col ">
                                         <% out.print(algo.get(2)); %><br/>
-                                        <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                        <a href="contact?nom=<%=algo.get(2)%>"><button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button></a>
                                         </a>
                                     </div>
                                 </div>
