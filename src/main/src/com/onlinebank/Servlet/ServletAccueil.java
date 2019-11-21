@@ -48,7 +48,7 @@ public class ServletAccueil extends HttpServlet {
             ArrayList tableau = new ArrayList();
             tableau.add(Filter.add("=","id_prospect",idprospect));
             List<ProspectProduit> listprospectproduit = Database.select(jointure,fields,tableau);
-            ArrayList arrayAlgo = new ArrayList();
+            ArrayList<String> arrayAlgo;
             arrayAlgo = Algo.algo(idprospect);
 
             /*Pour chaque produit de la personne :*/
@@ -69,6 +69,7 @@ public class ServletAccueil extends HttpServlet {
                         if (arrayAlgo.get(i) == d.getNom())
                         {
                             arrayAlgo.remove(i);
+
                         }
                     }
 
