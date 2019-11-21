@@ -254,6 +254,19 @@
                             <div class="col"><label for="verifCa">Possession d'un crédit automobile ?</label></div>
                             <input type="checkbox" name="verifCa" id="verifCa" class="col" <%if (result.getVerifCa() == true){%>checked<%}%>>
                         </div>
+                        <% if (session.getAttribute("role").equals("admin")){
+                        %>
+                        <div class="row">
+                            <div class="col"><label for="role">Role</label></div>
+                            <select name="role" id="role" class="custom-select border">
+                                <option selected value="<%= request.getAttribute("role")%>"><%= request.getAttribute("role")%></option>
+                                <option value="user">User</option>
+                                <option value="conseiller">Conseiller</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <%
+                            }%>
 
                     </div>
                     <div class="col">
