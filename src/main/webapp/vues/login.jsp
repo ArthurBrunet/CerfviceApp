@@ -20,7 +20,7 @@
                 ArrayList error = (ArrayList) request.getAttribute("error");
                 %>
             <h2 class="error-champs">
-                <%out.print(error.get(0));%>
++                <%out.print(error.get(0));%>
             </h2>
             <%
                 }

@@ -7,6 +7,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
+
+    <nav class="navbar navbar-inverse">
+        <form class="container-fluid" action="http://localhost:8080/OnlineBank_war_exploded/logout">
+            <a class="navbar-brand" href="accueil">
+                <img class="" src="assets/img/logo_bank_gold_biseau_noir.png">
+            </a>
+            <button type="submit" class="btn btn-secondary prap" href="logout">Déconnexion</button>
+        </form>
+    </nav>
+
     <title>Accueil</title>
 
     <div class="wrapper fadeInDown">
