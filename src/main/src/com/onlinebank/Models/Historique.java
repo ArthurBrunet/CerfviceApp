@@ -34,17 +34,6 @@ public class Historique extends BaseModelORM{
     @NotNull
     private Integer id_compte;
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public Historique setId(Integer id) {
-        this.id = id;
-        return this;
-    }
-
     public String getTablename() {
         return tableName;
     }

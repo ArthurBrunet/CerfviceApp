@@ -255,6 +255,20 @@
                             <div class="col"><label for="verifCa">Possession d'un crédit automobile ?</label></div>
                             <input type="checkbox" name="verifCa" id="verifCa" class="col">
                         </div>
+                        <% if (session.getAttribute("role") != null){
+                            %>
+                        <div class="row">
+                            <div class="col"><label for="role">Role</label></div>
+                            <select name="role" id="role" class="custom-select border">
+                                <option value="user">User</option>
+                                <option value="conseiller">Conseiller</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <%
+                        }%>
+
+
 
                     </div>
                     <div class="col">

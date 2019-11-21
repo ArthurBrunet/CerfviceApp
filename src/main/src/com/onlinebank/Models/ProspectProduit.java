@@ -28,17 +28,6 @@ public class ProspectProduit  extends BaseModelORM {
     @NotNull
     private Timestamp updated_at;
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public ProspectProduit setId(Integer id) {
-        this.id = id;
-        return this;
-    }
-
     public String getTableName() {
         return tableName;
     }
