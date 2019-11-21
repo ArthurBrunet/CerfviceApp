@@ -18,7 +18,7 @@
         <div class="fadeIn first">
             <img src="https://image.flaticon.com/icons/svg/1159/1159633.svg" id="icon" alt="User Icon" />
         </div>
-        <form action="" method="post">
+        <form action="" method="post" accept-charset="ISO-8859-1">
             <h1>Ajout d'un produit</h1>
             <div class="col-sm-12">
                 <select name="nomproduitajouter" id="nomproduitajouter" name="nomproduitajouter">

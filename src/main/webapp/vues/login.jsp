@@ -14,7 +14,7 @@
         </div>
 
         <!-- Login Form -->
-        <form action="" method="post">
+        <form action="" method="post" accept-charset="ISO-8859-1">
             <%
             if (request.getAttribute("error") != null){
                 ArrayList error = (ArrayList) request.getAttribute("error");
