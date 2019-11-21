@@ -1,5 +1,7 @@
 package com.onlinebank.Servlet;
 
+import com.onlinebank.Models.Produit;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,12 @@ public class ServletContact extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         if (session.getAttribute("role") != null) {
+            if (request.getParameter("nom") != null){
+                String nom = request.getParameter("nom");
 
+                Produit produits = new Produit();
+
+            }
             this.getServletContext().getRequestDispatcher(url).forward(request, response);
         }else{
             response.sendRedirect(request.getContextPath()+"/login");

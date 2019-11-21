@@ -69,7 +69,16 @@ public class ServletAccueil extends HttpServlet {
                         if (arrayAlgo.get(i) == d.getNom())
                         {
                             arrayAlgo.remove(i);
+                        }
+                        else{
+                            Produit produit2 = new Produit();
+                            ArrayList filter2 = new ArrayList();
+                            filter2.add(Filter.add("=","nom",'"'+arrayAlgo.get(i)+'"'));
+                            ArrayList<Produit> TableauDeProduitTropBeau = (ArrayList<Produit>) Database.select(produit2,fields,filter2);
 
+                            for (Produit f:TableauDeProduitTropBeau) {
+                                request.setAttribute(arrayAlgo.get(i),f.getId());
+                            }
                         }
                     }
 
