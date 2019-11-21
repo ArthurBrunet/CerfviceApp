@@ -26,6 +26,7 @@
                         <h1 class="mb-4 text-center">Mes produits</h1>
                         <% if (request.getAttribute("TableauGlobal") !=null){
                             ArrayList<ArrayList> tableauGlobal = (ArrayList<ArrayList>) request.getAttribute("TableauGlobal");
+                            ArrayList<ArrayList> algo = (ArrayList<ArrayList>) request.getAttribute("arrayalgo");
                             for (ArrayList tableau:tableauGlobal){
                                 %>
                         <div class="case" style="">
