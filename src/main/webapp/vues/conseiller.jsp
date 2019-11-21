@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.onlinebank.Models.Prospect" %>
+<%@ page import="com.onlinebank.Models.Produit" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
 <body class="body-dashboard">
@@ -107,109 +108,24 @@
                         </li>
                     </ul>
                 </nav>
-
-
-
-                <div class="table-responsive" id="1">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Age</th>
-                            <th>Email</th>
-                            <th>Produit 1</th>
-                            <th>Produit 2</th>
-                            <th>Produit 3</th>
-                            <th>Ses produits</th>
-                            <th>En savoir plus</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1,001</td>
-                            <td>Lorem</td>
-                            <td>ipsum</td>
-                            <td>dolor</td>
-                            <td>sit</td>
-                            <td>Lorem</td>
-                            <td>ipsum</td>
-                            <td><button type="button" class="btn btn-secondary" onclick="sesProduits()">
-                                Ses produits
-                            </button></td>
-                            <td><button type="button" class="btn btn-secondary" onclick="savoirPlus()">
-                                En savoir plus
-                            </button></td>
-                        </tr>
-
-                        </tbody>
-
-
             </div>
             <div class="row">
+            <%
+            if (request.getAttribute("TableauProduits") != null){
+                List<Produit> listeProduits = (List<Produit>) request.getAttribute("TableauProduits");
+                for (Produit produit: listeProduits){
+            %>
                 <div class="col-md-4">
-                    <h2>Compte courant</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <h2><%out.print(produit.getNom()); %></h2>
+                    <p><% out.print(produit.getDescription());%></p>
                     <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
                         Modifier
                     </button>
                 </div>
-                <div class="col-md-4">
-                    <h2>Livret jeune</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Livret A</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>PEL</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Assurance vie</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Crédit conso</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Crédit immo</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Crédit auto</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <h2>Crédit étudiant</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                        Modifier
-                    </button>
-                </div>
+            <%
+                }
+            }
+            %>
             </div>
         </main>
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">

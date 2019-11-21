@@ -91,6 +91,19 @@ public class ServletConseiller extends HttpServlet {
                 }
             }
 
+            /*affichage produit*/
+            Produit produitenbdd = new Produit();
+            ArrayList<String> fieldsProduit = new ArrayList<>();
+            fieldsProduit.add("*");
+            List<Produit> listProduit = Database.select(produitenbdd,fieldsProduit);
+            request.setAttribute("TableauProduits",listProduit);
+            for (Produit p:listProduit){
+                request.setAttribute(p.getNom(),p.getNom());
+                System.out.println("PRODUIT :");
+                System.out.println(p.getNom());
+                System.out.println(p.getDescription());
+            }
+
 
             this.getServletContext().getRequestDispatcher(url).forward(request, response);
         }else if (session.getAttribute("role").equals("user")){
