@@ -2,6 +2,7 @@ package com.onlinebank.Servlet;
 
 import com.onlinebank.Models.Produit;
 import com.onlinebank.Models.ProspectProduit;
+import com.onlinebank.Utils.Algo;
 import com.onlinebank.Utils.Database;
 import com.onlinebank.Utils.Filter;
 
@@ -47,6 +48,8 @@ public class ServletAccueil extends HttpServlet {
             ArrayList tableau = new ArrayList();
             tableau.add(Filter.add("=","id_prospect",idprospect));
             List<ProspectProduit> listprospectproduit = Database.select(jointure,fields,tableau);
+            ArrayList<String> arrayAlgo;
+            arrayAlgo = Algo.algo(idprospect);
 
             /*Pour chaque produit de la personne :*/
             for (ProspectProduit c:listprospectproduit) {
@@ -62,6 +65,14 @@ public class ServletAccueil extends HttpServlet {
                     /*Création d'un tableau d'information à injecter dans le tableau global*/
                     tableauInformations.add(d.getNom());
                     tableauInformations.add(d.getDescription());
+                    for (int i = 0; i < arrayAlgo.size(); i++) {
+                        if (arrayAlgo.get(i) == d.getNom())
+                        {
+                            arrayAlgo.remove(i);
+
+                        }
+                    }
+
                 }
                 tableauGlobal.add(0,tableauInformations);
             }
@@ -72,6 +83,7 @@ public class ServletAccueil extends HttpServlet {
                 }
             }
             request.setAttribute("TableauGlobal",tableauGlobal);
+            request.setAttribute("arrayalgo",arrayAlgo);
             this.getServletContext().getRequestDispatcher(url).forward(request, response);
         }else{
             response.sendRedirect(request.getContextPath()+"/login");

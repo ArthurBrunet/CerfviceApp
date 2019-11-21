@@ -36,36 +36,52 @@
                     </div>
                     <div class="col-4 brout">
                         <h1 class="mb-4 text-center">Mes offres</h1>
-                        <div class="case">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
-                                        <button type="button" class="btn btn-secondary prap">Contactez-nous</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="case">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
-                                        <button type="button" class="btn btn-secondary">Contactez-nous</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%
+                            if (request.getAttribute("arrayalgo") != null){
+                            ArrayList<String> algo = (ArrayList<String>) request.getAttribute("arrayalgo");
+                            if (!algo.get(0).isEmpty()){
+                        %>
                         <div class="case">
                             <div class="container">
                                 <div class="row">
                                     <div class="col ">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
+                                        <% out.print(algo.get(0)); %><br/>
                                         <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <%
+                            }if (algo.get(1) != null){
+                        %>
+                        <div class="case">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col ">
+                                        <% out.print(algo.get(1)); %><br/>
+                                        <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%
+                            }if (algo.get(2) != null){
+                        %>
+                        <div class="case">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col ">
+                                        <% out.print(algo.get(2)); %><br/>
+                                        <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%
+                                }
+                            }
+                        %>
+
                     </div>
                 </div>
         </div>
