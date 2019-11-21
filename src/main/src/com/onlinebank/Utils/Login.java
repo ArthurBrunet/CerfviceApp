@@ -38,12 +38,14 @@ public class Login {
                             String email = result.getEmail();
                             String role = result.getRole();
                             Integer id = result.getId_prospect();
+                            Integer idCompte = result.getId();
                             HttpSession session = request.getSession();
 
 //                          AJOUT ATTRIBUT DANS LA SESSION
                             session.setAttribute("email", email);
                             session.setAttribute("role",role);
                             session.setAttribute("idprospect",id);
+                            session.setAttribute("idcompte",idCompte);
 
                             errors.add(role);
 
@@ -67,9 +69,9 @@ public class Login {
             errors.add("/dashboard");
 
         }
-        if (errors.get(0).equals("Conseiller")){
+        if (errors.get(0).equals("conseiller")){
 
-            errors.add("/dashboard");
+            errors.add("/dashboardconseiller");
 
         }
         if (errors.get(0).equals("user")){

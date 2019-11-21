@@ -2,7 +2,7 @@
 <%@ include file="header.jsp"%>
 <div class="wrapper fadeInDown">
     <div id="formContentte">
-        <form action="" method="POST">
+        <form action="" method="POST" accept-charset="ISO-8859-1">
             <div class="container">
                 <div class="row">
                     <div class="col">

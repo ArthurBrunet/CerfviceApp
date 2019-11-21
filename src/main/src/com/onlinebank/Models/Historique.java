@@ -2,6 +2,7 @@ package com.onlinebank.Models;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
 
 public class Historique extends BaseModelORM{
     @NotBlank
@@ -12,19 +13,19 @@ public class Historique extends BaseModelORM{
 
     @NotBlank
     @NotNull
-    private String dateappel;
+    private Timestamp dateappel;
 
     @NotBlank
     @NotNull
-    private String resultat_appel;
+    private Boolean resultat_appel;
 
     @NotBlank
     @NotNull
-    private String created_at;
+    private Timestamp created_at;
 
     @NotBlank
     @NotNull
-    private String updated_at;
+    private Timestamp updated_at;
 
     @NotBlank
     @NotNull
@@ -34,53 +35,42 @@ public class Historique extends BaseModelORM{
     @NotNull
     private Integer id_compte;
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public Historique setId(Integer id) {
-        this.id = id;
-        return this;
-    }
-
-    public String getTablename() {
+    public String getTableName() {
         return tableName;
     }
 
-    public String getDateappel() {
+    public Timestamp getDateappel() {
         return dateappel;
     }
 
-    public Historique setDateappel(String dateappel) {
+    public Historique setDateappel(Timestamp dateappel) {
         this.dateappel = dateappel;
         return this;
     }
 
-    public String getResultat_appel() {
+    public Boolean getResultat_appel() {
         return resultat_appel;
     }
 
-    public Historique setResultat_appel(String resultat_appel) {
+    public Historique setResultat_appel(Boolean resultat_appel) {
         this.resultat_appel = resultat_appel;
         return this;
     }
 
-    public String getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public Historique setCreated_at(String created_at) {
+    public Historique setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
         return this;
     }
 
-    public String getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public Historique setUpdated_at(String updated_at) {
+    public Historique setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
         return this;
     }

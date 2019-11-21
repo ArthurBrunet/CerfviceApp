@@ -1,5 +1,5 @@
-<%@ page import="com.onlinebank.Models.Prospect" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.onlinebank.Models.Prospect" %>
 <%@ page import="com.onlinebank.Models.Produit" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
@@ -22,9 +22,9 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link menu-cote" href="<% out.print(request.getContextPath());%>/register">
+                        <a class="nav-link menu-cote" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                            <br/>Ajout de Compte
+                            <br/>Home OnlineBank
                         </a>
                     </li>
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -32,15 +32,15 @@
                     <li class="nav-item menu-cote">
                         <a class="nav-link active" href="#1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-                            <br/> Clients<span class="sr-only">(actuel)</span>
+                            <br/> Mes clients<span class="sr-only">(actuel)</span>
                         </a>
                     </li>
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     </div>
                     <li class="nav-item menu-cote">
-                        <a class="nav-link" href="product">
+                        <a class="nav-link" href="#2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                            <br/> Ajout d'un produits
+                            <br/> Produits
                         </a>
                     </li>
                 </ul>
@@ -56,36 +56,40 @@
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Age</th>
-                        <th>Situation familial</th>
-                        <th>Situation profesionnelle</th>
-                        <th>Situation de logement</th>
-                        <th>Publicité</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                        <th>Produit 1</th>
+                        <th>Produit 2</th>
+                        <th>Produit 3</th>
                         <th>Ses produits</th>
                         <th>En savoir plus</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <%
-                        List<Prospect> i = (List<Prospect>) request.getAttribute("user");
-                        for (Prospect result: i){
-                            Integer idresult = 0;
-                            idresult = result.getId();
-                            System.out.println("client" + idresult);
-                            %><tr>
-                                <td><% out.print(result.getNom()); %></td>
-                                <td><% out.print(result.getPrenom()); %></td>
-                                <td><% out.print(result.getAge()); %></td>
-                                <td><% out.print(result.getSituationfamiliale()); %></td>
-                                <td><% out.print(result.getSituationprofessionnel()); %></td>
-                                <td><% out.print(result.getSituationlogement()); %></td>
-                                <td><% out.print(result.getBloquepub()); %></td>
-                        <td><a href="interface?id=<% out.print(result.getId()); %>">Contacter</a></td>
-
-                            </tr>
-                       <% } %>
+                    <% List<Prospect> c = (List<Prospect>) request.getAttribute("user");
+                        for (Prospect result: c)
+                        {
+                            %><tr><%
+                            %><td><% out.print(result.getNom()); %></td><%
+                            %><td><% out.print(result.getPrenom()); %></td><%
+                            %><td><% out.print(result.getAge()); %></td><%
+                            %><td><% out.print(request.getAttribute(result.getId()+"email")); %></td><%
+                            %><td><% out.print(result.getTelephone()); %></td><%
+                            %><td><% if (request.getAttribute(result.getId()+"produit"+0) != null)
+                    { out.print(request.getAttribute(result.getId()+"produit"+1)); }else{ out.print("Pas de produit"); }%></td><%
+                            %><td><% if (request.getAttribute(result.getId()+"produit"+1) != null)
+                    { out.print(request.getAttribute(result.getId()+"produit"+2)); }else{ out.print("Pas de produit"); }%></td><%
+                            %><td><% if (request.getAttribute(result.getId()+"produit"+2) != null)
+                    { out.print(request.getAttribute(result.getId()+"produit"+3)); }else{ out.print("Pas de produit"); }%></td><%
+                            %><td><a href="<% out.print(request.getContextPath());%>/interface?id=<% out.print(result.getId()); %>">Contacter</a></td><%
+                            %></tr><%
+                        }
+                    %>
                     </tbody>
-                </table>
 
+
+
+                </table>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-end" id="2">
                         <li class="page-item disabled">
@@ -106,24 +110,22 @@
                 </nav>
             </div>
             <div class="row">
-                <div class="row">
-                    <%
-                        if (request.getAttribute("TableauProduits") != null){
-                            List<Produit> listeProduits = (List<Produit>) request.getAttribute("TableauProduits");
-                            for (Produit produit: listeProduits){
-                    %>
-                    <div class="col-md-4">
-                        <h2><%out.print(produit.getNom()); %></h2>
-                        <p><% out.print(produit.getDescription());%></p>
-                        <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
-                            Modifier
-                        </button>
-                    </div>
-                    <%
-                            }
-                        }
-                    %>
+            <%
+            if (request.getAttribute("TableauProduits") != null){
+                List<Produit> listeProduits = (List<Produit>) request.getAttribute("TableauProduits");
+                for (Produit produit: listeProduits){
+            %>
+                <div class="col-md-4">
+                    <h2><%out.print(produit.getNom()); %></h2>
+                    <p><% out.print(produit.getDescription());%></p>
+                    <button type="button" class="btn btn-secondary modifier" onclick="modfierProduits()">
+                        Modifier
+                    </button>
                 </div>
+            <%
+                }
+            }
+            %>
             </div>
         </main>
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -139,8 +141,6 @@
         </nav>
     </div>
 </div>
-
-<!--
 <script>
         src="https://code.jquery.com/jquery-3.4.1.min.js"
 </script>
@@ -158,7 +158,7 @@
         })
 
         swalWithBootstrapButtons.fire({
-            titleText: 'Informations client',
+            titleText: 'Amandine Pertout',
             html: 'Age: <b>23</b> </br> Situation familiale: <b>Veuf</b>' +
                 ' </br> Revenu: <b>1700€</b> </br> Dépenses régulières: <b>2300€</b> </br> Situation professionnelle: <b>Chômage</b>' +
                 ' </br> Téléphone: <b>02.54.38.89.27</b> </br> Enfants: <b>2</b> </br> Département : <b>Seine-Maritime</b>' +
@@ -288,33 +288,6 @@
         }
 
     })()
-    }
-</script>-->
-<script>
-    // Get the modal
-    var modal = document.getElementById("MyModal");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
     }
 </script>
 </body>

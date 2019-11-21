@@ -26,7 +26,7 @@ public class ServletRegister extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        if (session.getAttribute("role") == null) {
+        if (session.getAttribute("role") == null || session.getAttribute("role").equals("admin")) {
 
             /* Récupération des champs du formulaire. */
             String email = request.getParameter("email");
@@ -55,6 +55,11 @@ public class ServletRegister extends HttpServlet {
             String creditconsommation= request.getParameter("verifCc");
             String creditimmobilier= request.getParameter("verifCi");
             String creditautomobile= request.getParameter("verifCa");
+
+            String role = "user";
+            if(request.getParameter("role") != null) {
+                role = request.getParameter("role");
+            }
 
             String ATT_ERREURS = "erreurs";
             String ATT_RESULTAT = "resultat";
@@ -218,14 +223,18 @@ public class ServletRegister extends HttpServlet {
                         .setToken(generateRandomString())
                         .setId_prospect(id)
                         .setCreated_at(date)
-                        .setRole("user");
+                        .setRole(role);
                 Database.insert(Compte);
             }else {
                 resultat = "Echec de l'inscription.";
             }
             request.setAttribute(ATT_ERREURS, erreurs);
             request.setAttribute(ATT_RESULTAT, resultat);
-            this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
+            if (session.getAttribute("role") != null){
+                response.sendRedirect(request.getContextPath()+"/dashboard");
+            }else{
+                response.sendRedirect(request.getContextPath()+"/login");
+            }
         }else{
             response.sendRedirect(request.getContextPath()+"/accueil");
         }
@@ -233,7 +242,7 @@ public class ServletRegister extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        if (session.getAttribute("role") == null) {
+        if (session.getAttribute("role") == null || session.getAttribute("role").equals("admin")) {
             request.getRequestDispatcher(VUE).forward(request,response);
         }else{
             response.sendRedirect(request.getContextPath()+"/accueil");

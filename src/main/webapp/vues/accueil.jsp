@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: 17350
   Date: 30/10/2019
@@ -19,59 +19,71 @@
     </nav>
 
     <title>Accueil</title>
+
     <div class="wrapper fadeInDown">
         <div id="formContennt">
                 <div class="row justify-content-around">
                     <div class="col-4">
                         <h1 class="mb-4 text-center">Mes produits</h1>
+                        <% if (request.getAttribute("TableauGlobal") !=null){
+                            ArrayList<ArrayList> tableauGlobal = (ArrayList<ArrayList>) request.getAttribute("TableauGlobal");
+                            for (ArrayList tableau:tableauGlobal){
+                                %>
                         <div class="case" style="">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis dolorem, eligendi ex expedita facilis ipsa ipsam labore molestiae molestias nisi nobis quidem similique sint, suscipit ut vero. Iste, voluptatem.
+                            <p class="font-weight-bold text-uppercase"><% out.print(tableau.get(0)); %></p>
+                            <p><% out.print(tableau.get(1)); %></p>
                         </div>
-                        <div class="case">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis dolorem, eligendi ex expedita facilis ipsa ipsam labore molestiae molestias nisi nobis quidem similique sint, suscipit ut vero. Iste, voluptatem.
-                        </div>
-                        <div class="case">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis dolorem, eligendi ex expedita facilis ipsa ipsam labore molestiae molestias nisi nobis quidem similique sint, suscipit ut vero. Iste, voluptatem.
-                        </div>
+                        <% } } %>
                     </div>
                     <div class="col-4 brout">
                         <h1 class="mb-4 text-center">Mes offres</h1>
-                        <div class="case">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
-                                        <a href="contact">
-                                            <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="case">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
-                                        <a href="contact">
-                                            <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%
+                            if (request.getAttribute("arrayalgo") != null){
+                            ArrayList<String> algo = (ArrayList<String>) request.getAttribute("arrayalgo");
+                            if (!algo.get(0).isEmpty()){
+                        %>
                         <div class="case">
                             <div class="container">
                                 <div class="row">
                                     <div class="col ">
-                                        ita fdem similique sint, suscipit ut vero. Iste, voluptatem.<br/>
-                                        <a href="contact">
+                                        <% out.print(algo.get(0)); %><br/>
+                                        <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%
+                            }if (algo.get(1) != null){
+                        %>
+                        <div class="case">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col ">
+                                        <% out.print(algo.get(1)); %><br/>
+                                        <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%
+                            }if (algo.get(2) != null){
+                        %>
+                        <div class="case">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col ">
+                                        <% out.print(algo.get(2)); %><br/>
                                         <button type="button" class="btn btn-secondary" id="fittext3">Contactez-nous</button>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <%
+                                }
+                            }
+                        %>
+
                     </div>
                 </div>
         </div>
