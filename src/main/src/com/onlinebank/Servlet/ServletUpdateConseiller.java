@@ -74,6 +74,11 @@ public class ServletUpdateConseiller extends HttpServlet{
                 String creditimmobilier= request.getParameter("verifCi");
                 String creditautomobile= request.getParameter("verifCa");
 
+                String role = "user";
+                if(request.getParameter("role") != null) {
+                    role = request.getParameter("role");
+                }
+
                 String ATT_ERREURS = "erreurs";
                 String ATT_RESULTAT = "resultat";
 
@@ -231,9 +236,10 @@ public class ServletUpdateConseiller extends HttpServlet{
                             .setToken(resultCompte.getToken())
                             .setCreated_at(resultCompte.getCreated_at())
                             .setUpdated_at(Timestamp.valueOf(LocalDateTime.now()))
-                            .setRole(resultCompte.getRole());
+                            .setRole(role);
                         Database.updateId(Compte,resultCompte.getId());
                         request.setAttribute("email", resultCompte.getEmail());
+                        request.setAttribute("role", resultCompte.getRole());
                     }
                 }
             }
@@ -267,6 +273,7 @@ public class ServletUpdateConseiller extends HttpServlet{
                 List<Compte> c = Database.select(user, field2, filtres2);
                 for (Compte resultCompte : c) {
                     request.setAttribute("email", resultCompte.getEmail());
+                    request.setAttribute("role", resultCompte.getRole());
                 }
             }
 
