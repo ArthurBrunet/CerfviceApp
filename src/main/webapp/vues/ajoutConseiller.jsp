@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: rhorew
   Date: 20/11/2019
@@ -7,7 +7,20 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
-<form action="">
+<%
+    if (request.getAttribute("TableauProduit") != null){
+        ArrayList<String> tableauProduit = (ArrayList<String>) request.getAttribute("TableauProduit"); %>
+    <form action="">
+        <select name="nomproduitajouter" id="nomproduitajouter">
+<%
+        for (String nom: tableauProduit){
+%>
+            <option value="<% out.print(nom);%>"><% out.print(nom);%></option>
+<% } %>
+        </select>
+    </form>
+<%
+    }
+%>
 
-</form>
 <%@ include file="footer.jsp"%>

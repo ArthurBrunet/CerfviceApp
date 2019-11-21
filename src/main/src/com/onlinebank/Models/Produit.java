@@ -31,10 +31,6 @@ public class Produit extends BaseModelORM{
         this.id = id;
         return this;
     }
-
-    public String getTableName() {
-        return tableName;
-    }
   
     public String getNom() {
         return nom;

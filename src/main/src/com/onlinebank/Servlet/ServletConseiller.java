@@ -84,8 +84,9 @@ public class ServletConseiller extends HttpServlet {
                     int count = 0;
                     for (Produit d: listProduit)
                     {
-                        count++;
+
                         request.setAttribute(index + "produit" + count,d.getNom());
+                        count++;
                     }
                 }
             }
