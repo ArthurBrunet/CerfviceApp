@@ -76,11 +76,11 @@
                             %><td><% out.print(request.getAttribute(result.getId()+"email")); %></td><%
                             %><td><% out.print(result.getTelephone()); %></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+0) != null)
-                    { out.print(request.getAttribute(result.getId()+"produit"+1)); }else{ out.print("Pas de produit"); }%></td><%
+                    { out.print(request.getAttribute(result.getId()+"produit"+0)); }else{ out.print("Pas de produit"); }%></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+1) != null)
-                    { out.print(request.getAttribute(result.getId()+"produit"+2)); }else{ out.print("Pas de produit"); }%></td><%
+                    { out.print(request.getAttribute(result.getId()+"produit"+1)); }else{ out.print("Pas de produit"); }%></td><%
                             %><td><% if (request.getAttribute(result.getId()+"produit"+2) != null)
-                    { out.print(request.getAttribute(result.getId()+"produit"+3)); }else{ out.print("Pas de produit"); }%></td><%
+                    { out.print(request.getAttribute(result.getId()+"produit"+2)); }else{ out.print("Pas de produit"); }%></td><%
                             %><td><a href="<% out.print(request.getContextPath());%>/interface?id=<% out.print(result.getId()); %>">Contacter</a></td><%
                             %></tr><%
                         }
